@@ -1,4 +1,4 @@
-# Firewall Rules
+# QR
 
 :::info
 This feature is only available in [ShellHub Cloud](https://shellhub.io) and

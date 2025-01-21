@@ -1,7 +1,7 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
-# Editions
+# Produccion
 
 ShellHub is available in three different editions: **Community**, **Enterprise**, and **Cloud**.
 Each edition offers its own set of features and benefits, making it easy to find the right solution for your needs.

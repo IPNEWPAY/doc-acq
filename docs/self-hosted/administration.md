@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Administration
+# Billetera
 
 ShellHub provides useful scripts for administering a self-hosted ShellHub instance. These scripts are located under the `./bin/cli` executable, which can be found at the root of the ShellHub project directory.
 

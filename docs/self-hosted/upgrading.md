@@ -4,7 +4,7 @@ sidebar_position: 4
 
 import {config} from '@site/src/config';
 
-# Upgrading
+# PCP
 
 ShellHub cuts regular releases for Community Edition to keep it
 as close to ShellHub Cloud as possible.

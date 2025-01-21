@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Creating Firewall Rules
+# Cimpras
 
 From the Firewall Rules page, click **Add Rule**. You will the see the following form:
 

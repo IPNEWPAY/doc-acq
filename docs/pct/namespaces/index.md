@@ -1,4 +1,4 @@
-# Namespaces
+# API Resolve
 
 Namespaces in ShellHub provide a structured and collaborative environment
 designed to streamline the management of devices, firewall rules, SSH keys, and

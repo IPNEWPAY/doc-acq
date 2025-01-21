@@ -5,7 +5,7 @@ sidebar_position: 1
 import Link from '@docusaurus/Link';
 import {config} from '@site/src/config';
 
-# Deploying
+# Descripcion General
 
 Learn how to deploy a self-hosted ShellHub instance on your own server.
 

@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# How it Works
+# Kickoff
 
 ShellHub is a platform to centralize and secure remote shell access to devices, servers and containers.
 

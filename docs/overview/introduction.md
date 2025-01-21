@@ -6,47 +6,23 @@ sidebar_position: 1
 import DocCardList from '@theme/DocCardList';
 import DocCard from '@theme/DocCard';
 
-# Introduction
+# Primeros pasos
 
-## What is ShellHub?
+Bienvenido a Newpay Docs, una plataforma que centraliza la integracion contractual y tecnica para una mejor solucion de onboarding. Te invitamos a descubrirla para que puedas entender mejor la solucion que estas buscando. Luego podras agendar un espacio para un kickoff para avanzar en nuestro onboarding. Te esperamos!
 
-ShellHub is a platform to centralize and secure remote shell access to devices, servers and containers.
+## Conoces nuestros productos?
 
-![](/img/newdiagram.png)
+![](/img/flujo.png)
 
-## How it Works
+## Pagos con Transferencias
 
-ShellHub operates by installing a lightweight agent on each of your devices, servers or containers. This agent establishes a secure connection with the ShellHub server, allowing you to remotely access and manage these systems through the ShellHub UI or via standard SSH tools.
+Es una iniciativa innovadora lanzada por el [Banco Central de la República Argentina (BCRA)](https://www.bcra.gob.ar/MediosPago/Transferencias-3-0.asp) para impulsar los pagos digitales y promover una mayor inclusión financiera en el país. El sistema permite a los usuarios leer cualquier código QR con cualquier billetera virtual o aplicación bancaria, haciendo que el pago sea similar al efectivo, pero util)izando un teléfono. Puedes obtener mas detalle [aqui](/pct).
 
-## Why ShellHub?
+## Consentimiento
 
-Managing secure remote shell access to devices, servers, and containers is often complex, and it becomes even more challenging as the infrastructure scales. ShellHub provides the most efficient way to centralize and secure remote shell access.
+El consentimiento, en el contexto de los pagos digitales y las finanzas abiertas, se refiere a la autorización explícita que un usuario otorga a un tercero, como una billetera digital, para actuar en su nombre en relación con sus cuentas bancarias. Según la normativa del [Banco Central (Comunicación A7996)](https://www.bcra.gob.ar/Pdfs/Medios_pago/T3.0-Pull-Consentimiento.pdf), esta autorización permite que la billetera digital, por ejemplo, inicie transferencias u opere dentro de los límites y condiciones previamente establecidos en el consentimiento otorgado. Este mecanismo asegura que el usuario mantenga el control sobre sus operaciones financieras, garantizando tanto la seguridad como la transparencia. Puedes obtener mas detalle [aqui](/consentimiento)
 
-1. **Remote Access Simplification**:
-   ShellHub simplifies remote access to devices across diverse networks. It eliminates the need for complex VPN setups or direct public access, ensuring secure and manageable connections from anywhere.
+## Transferencias PULL
 
-2. **Enhancing Security**: Centralized authentication with public key cryptography eliminates the need for password-based authentication, which can be vulnerable to brute-force attacks and password leaks.
+Las transferencias pull son una modalidad innovadora de transferencia de fondos regulada por el [Banco Central de la República Argentina (BCRA)](https://www.bcra.gob.ar/Pdfs/Medios_pago/T3.0-Pull-Consentimiento.pdf). A diferencia de las transferencias tradicionales, en las que el ordenante inicia la operación, este esquema permite que el receptor solicite los fondos, siempre con el consentimiento previo del ordenante. Esta metodología, diseñada para simplificar y agilizar pagos, se sustenta en un marco normativo que garantiza la transparencia y seguridad de las transacciones, especialmente en contextos como pagos recurrentes o comercio electrónico. Puedes obtener mas detalle [aqui](/tpull)
 
-3. **Simplifying Access Management**: Managing access to multiple devices becomes more straightforward with public key authentication. Administrators can easily add or remove access permissions by managing keys centrally on ShellHub.
-
-4. **Controlling Network Access**: Administrators can create detailed firewall rules to control remote shell access to devices, servers and containers. This includes specifying allowed and blocked IP addresses and users, ensuring that only trusted connections can reach these systems.
-
-## Next Steps
-
-<DocCardList items={[
-{
-type: 'link',
-label: 'Quick Start with ShellHub Cloud',
-description: 'The simplest way to get started with ShellHub',
-docId: 'overview/getting-started/cloud',
-href: '/overview/getting-started/cloud',
-className: 'nada'
-},
-{
-type: 'link',
-label: 'Self-Hosted ShellHub',
-description: 'Run ShellHub server on your own infrastructure',
-docId: 'self-hosted/deploying',
-href: '/self-hosted'
-},
-]}/>

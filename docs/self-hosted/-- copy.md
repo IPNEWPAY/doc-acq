@@ -4,7 +4,7 @@ sidebar_position: 5
 
 import Link from '@docusaurus/Link';
 
-# Troubleshooting
+# --
 
 In case you're experiencing problems with using ShellHub Self-Hosted,
 you can troubleshoot and trace possible errors by using the methods given below.

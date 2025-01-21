@@ -2,7 +2,7 @@
 description: Quickstart with ShellHub Cloud
 hide_table_of_contents: true
 ---
-# Getting Started
+# Release
 
 If you want to get started with ShellHub as quickly as possible,
 the ShellHub Cloud is the way to go. With the ShellHub Cloud,
@@ -19,8 +19,8 @@ import DocCard from '@theme/DocCard';
 type: 'link',
 label: 'Quick Start with ShellHub Cloud',
 description: 'The simplest way to get started with ShellHub',
-docId: 'overview/getting-started/cloud',
-href: '/overview/getting-started/cloud',
+docId: 'overview/getting-started/release',
+href: '/overview/getting-started/release',
 className: 'nada'
 },
 {

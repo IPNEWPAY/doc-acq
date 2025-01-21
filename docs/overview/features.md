@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Features
+# Sandbox y otras tools
 
 ShellHub is a powerful and feature-rich platform for remotely accessing and
 managing Linux servers and devices. Some of the key features that make ShellHub

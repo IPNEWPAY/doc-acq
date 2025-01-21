@@ -154,3 +154,18 @@ ul.menu__list > li > a.menu__link--active {
   transform: rotate(0deg);
   background: var(--ifm-menu-link-sublist-icon) 50% / 1.2rem 1.2rem;
 }
+
+.navbar__brand {
+  display: flex;
+  align-items: center; /* Centra el logo verticalmente */
+  height: auto;        /* Permite que se ajuste al tamaño del logo */
+}
+
+.navbar__logo {
+  height: 10vh; /* Tamaño basado en la altura de la ventana */
+  width: auto;
+}
+
+.navbar {
+  height: 90px; /* Ajusta para acomodar el logo más grande */
+}

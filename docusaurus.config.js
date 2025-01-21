@@ -101,9 +101,14 @@ const config = {
       navbar: {
         hideOnScroll: false,
         logo: {
-          alt: 'ShellHub',
-          src: 'img/logo.png',
-          srcDark: 'img/logo-dark.svg',
+          alt: 'Newpay',
+          src: 'img/logo.svg',
+          style: {
+            width: 'auto',        // Mantén las proporciones
+            height: '80px',       // Ajusta la altura del logo
+            marginLeft: '2px',   // Espaciado opcional
+            verticalAlign: 'center' // Asegura la alineación vertical
+          }
         },
         items: [
           {

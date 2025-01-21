@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Configuration
+# Consentimiento
 
 ShellHub is easy to configure, all configuration is done via environment
 variables inside the `.env.override` file located at the root of ShellHub project dir.
