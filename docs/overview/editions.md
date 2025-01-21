@@ -1,49 +1,84 @@
 ---
 sidebar_position: 5
 ---
-# Produccion
+# Requisitos para alta Productiva
 
-ShellHub is available in three different editions: **Community**, **Enterprise**, and **Cloud**.
-Each edition offers its own set of features and benefits, making it easy to find the right solution for your needs.
+Para implementar un sistema de producción en el contexto de **Billeteras PCT**, **Aceptadores** y **PCP/Wallet PULL**, es necesario cumplir con una serie de requisitos que garantizan el correcto funcionamiento del sistema, la integración técnica y el cumplimiento normativo. Estos requisitos se dividen en diferentes etapas, desde la homologación hasta la configuración, pasando por pruebas operativas y notificaciones regulatorias.
 
-The choice between the different editions of ShellHub will depend on your specific needs and requirements. Whether you want to self-host on your own servers, integrate ShellHub into a larger enterprise infrastructure, or prefer a fully managed cloud solution, there's an edition that's right for you.
-
-## Overview of ShellHub Editions
-
-### Community Edition
-
-This is the open-source edition of ShellHub, available on GitHub.
-It includes the core features of ShellHub and can be self-hosted on your on infraestructure.
-This edition is perfect for individual developers, small teams, or organizations that do not
-require the advanced features of the Enterprise Edition.
-
-### Enterprise Edition
-
-This edition includes all of the features of the Community Edition,
-plus additional features designed for businesses.
-This includes things like enhanced security and advanced authentication options.
-It can be installed on your own infrastructure or in a fully managed dedicated server.
-If you want to use ShellHub as part of a larger enterprise infrastructure,
-the Enterprise Edition is the way to go.
-
-### Cloud Edition
-
-This is a SaaS offering that is based on the Enterprise Edition.
-It's a great option if you don't want to worry about managing your own servers,
-and you can easily sign up and get started with ShellHub in just a few minutes.
-
-## Editions Comparison
-
-| Feature                          | **Community Edition**                 | **Enterprise Edition**                                                                                     | **ShellHub Cloud**                                                                 |
+| Requisitos                          | **Billetera PCT**                 | **Aceptador**                                                                                     | **PCP/Wallet PULL**                                                                 |
 | -------------------------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| Availability                     | Self-Hosted                           | ¹Self-Hosted or Fully Managed                                                                              | SaaS                                                                               |
-| Core Features                    | ✔️                                    | ✔️                                                                                                         | ✔️                                                                                 |
-| Premium Features                 | ❌                                    | ✔️                                                                                                         | ✔️                                                                                 |
-| Ideal for                        | Individual developers and small teams | Businesses requiring exclusive high-availability servers and premium features, regardless of business size | From individual developers and small to medium businesses seeking premium features |
-| Pricing                          | Free                                  | Price on Request                                                                                           | Start for free and pay-as-you-go                                                   |
-| Support                          | Community Support                     | Priority Support                                                                                           | Standard Support                                                                   |
-| High-Availability                | ❌                                    | ¹✔️                                                                                                        | ➖                                                                                 |
-| Advanced Security                | ❌                                    | ✔️                                                                                                         | ✔️                                                                                 |
-| Advanced Authentication          | ❌                                    | ✔️                                                                                                         | ✔️                                                                                 |
-| Advanced Monitoring and Auditing | ❌                                    | ✔️                                                                                                         | ✔️                                                                                 |
+| Alta Formulario Homologacion                     | ✔️                           | ✔️                                                                              | ✔️                                                                               |
+| Plan de Pruebas                    | ✔️                                    | ✔️                                                                                                         | ✔️                                                                                 |
+| Configuracion para Integracion                | ✔️                                    | ✔️                                                                                                         | ✔️                                                                                 |
+| Integracion Parcial                       | ❌ | ❌ | ✔️ |
+| Integracion Total (1 a 1)                          | ✔️                                  | ✔️                                                                                           | ❌                                                   |
+| Alta Formulario Produccion                          | ✔️                     | ✔️                                                                                           | ✔️                                                                    |
+| Manual Operativo                | ¹✔️                                    | ¹✔️                                                                                                        | ¹✔️                                                                                 |
+| -                | ❌                                    | ❌                                                                                                         | ✔️                                                                                 |
+| -           | ✔️                                    | ✔️                                                                                                         | ❌                                                                                 |
+| Notificacion BCRA  | ✔️                                    | ✔️                                                                                                         | ❌                                                                                 |
+
+
+
+A continuación, se describen cada uno de los requisitos necesarios:
+
+## Alta de Formulario de Homologación
+
+Este requisito implica completar y presentar el formulario correspondiente a la etapa de homologación. Este formulario permite a las entidades iniciar el proceso de integración en el entorno de pruebas. Aplica para:
+
+* Billetera PCT: Requisito obligatorio.
+* Aceptador: Requisito obligatorio.
+* PCP/Wallet PULL: Requisito obligatorio.
+
+## Plan de Pruebas
+
+El plan de pruebas es un documento detallado que define los escenarios que deben ejecutarse para garantizar la calidad y el cumplimiento de las integraciones técnicas. Este requisito incluye pruebas funcionales y de interoperabilidad. Aplica para:
+
+* Billetera PCT: Requisito obligatorio.
+* Aceptador: Requisito obligatorio.
+* PCP/Wallet PULL: Requisito obligatorio.
+
+## Configuración para la Integración
+
+Este paso asegura que la configuración técnica necesaria esté preparada antes de realizar cualquier prueba. Incluye configuraciones en los sistemas de los participantes, como las credenciales y parámetros de conexión. Aplica para:
+
+* Billetera PCT: Requisito obligatorio.
+* Aceptador: Requisito obligatorio.
+* PCP/Wallet PULL: Requisito obligatorio.
+
+## Integración Parcial
+
+La integración parcial es opcional y se utiliza únicamente en el caso de PCP/Wallet PULL. Este requisito permite realizar una conexión inicial con funcionalidades limitadas para garantizar que los elementos básicos del sistema operen correctamente. No aplica para:
+
+* PCP/Wallet PULL
+
+## Integración Total (1 a 1)
+
+La integración total asegura que cada entidad participante pueda operar de forma completa e independiente. En este caso, las billeteras y aceptadores deben integrarse directamente con los sistemas necesarios para garantizar la operación. Aplica para:
+
+* Billetera PCT.
+* Aceptador.
+
+## Alta de Formulario de Producción
+
+Este formulario es necesario para mover el sistema al entorno de producción una vez que se han completado las pruebas y configuraciones. Aplica para:
+
+* Billetera PCT: Requisito obligatorio.
+* Aceptador: Requisito obligatorio.
+* PCP/Wallet PULL: Requisito obligatorio.
+
+
+## Manual Operativo
+
+El manual operativo es un documento que describe los procedimientos de uso y las mejores prácticas para garantizar una operación fluida. Este manual es obligatorio para todas las entidades, pero su contenido puede variar según los roles. Aplica para:
+
+* Billetera PCT: Requisito obligatorio.
+* Aceptador: Requisito obligatorio.
+* PCP/Wallet PULL: Requisito obligatorio.
+
+## Notificación al BCRA
+El Banco Central de la República Argentina (BCRA) debe ser notificado una vez que la integración esté lista para operar en producción. Este requisito aplica para:
+
+* Billetera PCT: Requisito obligatorio.
+* Aceptador: Requisito obligatorio.
 

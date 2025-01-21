@@ -1,15 +1,29 @@
 import React from 'react';
 import clsx from 'clsx';
-import {ThemeClassNames} from '@docusaurus/theme-common';
-import {useDoc} from '@docusaurus/plugin-content-docs/client';
+import { ThemeClassNames } from '@docusaurus/theme-common';
 import TagsListInline from '@theme/TagsListInline';
 import EditMetaRow from '@theme/EditMetaRow';
-//import Giscus from '@giscus/react';
+
+// import Giscus from '@giscus/react';
 
 export default function DocItemFooter(): JSX.Element | null {
-  const {metadata} = useDoc();
-  const {editUrl, lastUpdatedAt, lastUpdatedBy, tags} = metadata;
+  let metadata;
 
+  try {
+    // Intenta obtener el metadata desde el hook useDoc
+    const doc = require('@docusaurus/plugin-content-docs/client').useDoc();
+    metadata = doc.metadata;
+  } catch (e) {
+    console.warn('useDoc no está disponible fuera del contexto <DocProvider>. Mostrando pie de página genérico.');
+    return (
+      <footer
+        className={clsx('docusaurus-mt-lg', 'doc-footer')}>
+        <p>Este es un pie de página genérico. Configúralo en un contexto de documentación.</p>
+      </footer>
+    );
+  }
+
+  const { editUrl, lastUpdatedAt, lastUpdatedBy, tags } = metadata;
   const canDisplayTagsRow = tags.length > 0;
   const canDisplayEditMetaRow = !!(editUrl || lastUpdatedAt || lastUpdatedBy);
 
@@ -21,7 +35,7 @@ export default function DocItemFooter(): JSX.Element | null {
 
   return (
     <>
-      {process.env.NODE_ENV != 'development' /*&&
+      {process.env.NODE_ENV !== 'development' /* &&
         <Giscus
           loading='async'
           crossorigin='true'
@@ -35,8 +49,8 @@ export default function DocItemFooter(): JSX.Element | null {
           emitMetadata='0'
           inputPosition='top'
           theme='dark_dimmed'
-          lang='en' />*/
-      }  
+          lang='en' /> */
+      }
       <footer
         className={clsx(ThemeClassNames.docs.docFooter, 'docusaurus-mt-lg')}>
         {canDisplayTagsRow && (
@@ -65,4 +79,3 @@ export default function DocItemFooter(): JSX.Element | null {
     </>
   );
 }
-
