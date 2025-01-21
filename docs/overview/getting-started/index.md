@@ -14,21 +14,5 @@ to set up the Community Edition on your own server.
 import DocCardList from '@theme/DocCardList';
 import DocCard from '@theme/DocCard';
 
-<DocCardList items={[
-{
-type: 'link',
-label: 'Quick Start with ShellHub Cloud',
-description: 'The simplest way to get started with ShellHub',
-docId: 'overview/getting-started/release',
-href: '/overview/getting-started/release',
-className: 'nada'
-},
-{
-type: 'link',
-label: 'Self-Hosted ShellHub',
-description: 'Run ShellHub server on your own infrastructure',
-docId: 'self-hosted/deploying',
-href: '/self-hosted'
-},
-]}/>
+
 
