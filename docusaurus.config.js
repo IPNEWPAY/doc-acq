@@ -166,8 +166,19 @@ const config = {
     }),
 
   plugins: [
-    '@chatwoot/docusaurus-plugin',
-    'docusaurus-plugin-image-zoom',
+    [
+    '@scalar/docusaurus',
+    {
+      label: 'Scalar',
+      route: '/scalar',
+      configuration: {
+        spec: {
+          // Put the URL to your OpenAPI document here:
+          url: '/swagger.yaml',
+        },
+      },
+    },
+  ],
   ],
 };
 
