@@ -4,7 +4,7 @@ import {ThemeClassNames} from '@docusaurus/theme-common';
 import {useDoc} from '@docusaurus/plugin-content-docs/client';
 import TagsListInline from '@theme/TagsListInline';
 import EditMetaRow from '@theme/EditMetaRow';
-import Giscus from '@giscus/react';
+//import Giscus from '@giscus/react';
 
 export default function DocItemFooter(): JSX.Element | null {
   const {metadata} = useDoc();
@@ -21,7 +21,7 @@ export default function DocItemFooter(): JSX.Element | null {
 
   return (
     <>
-      {process.env.NODE_ENV != 'development' &&
+      {process.env.NODE_ENV != 'development' /*&&
         <Giscus
           loading='async'
           crossorigin='true'
@@ -35,7 +35,7 @@ export default function DocItemFooter(): JSX.Element | null {
           emitMetadata='0'
           inputPosition='top'
           theme='dark_dimmed'
-          lang='en' />
+          lang='en' />*/
       }  
       <footer
         className={clsx(ThemeClassNames.docs.docFooter, 'docusaurus-mt-lg')}>
