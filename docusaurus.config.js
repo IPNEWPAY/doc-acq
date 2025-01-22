@@ -169,7 +169,7 @@ const config = {
     [
     '@scalar/docusaurus',
     {
-      label: 'Scalar',
+      label: 'Developers',
       route: '/scalar',
       configuration: {
         spec: {
