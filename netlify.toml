@@ -4,3 +4,15 @@
     Access-Control-Allow-Origin = "*"
     Access-Control-Allow-Methods = "GET, POST, OPTIONS"
     Access-Control-Allow-Headers = "Content-Type, Authorization"
+
+[[redirects]]
+  from = "/v1/*"
+  to = "https://proxy.scalar.com/?scalar_url=https://wallet.release.newpay.com.ar/v1/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/scalar/*"
+  to = "https://proxy.scalar.com/?scalar_url=https://wallet.release.newpay.com.ar/scalar/:splat"
+  status = 200
+  force = true
