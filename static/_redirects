@@ -1,1 +1,2 @@
+/scalar/* https://wallet.release.newpay.com.ar/scalar/:splat 200
 /v1/* https://wallet.release.newpay.com.ar/v1/:splat 200
