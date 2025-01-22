@@ -1,4 +1,11 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    access-control-allow-origin = "*"
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"
+
+[[redirects]]
+  from = "/v1/*"
+  to = "https://wallet.release.newpay.com.ar/v1/:splat"
+  status = 200
