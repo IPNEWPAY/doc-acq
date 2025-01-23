@@ -5,9 +5,9 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'ShellHub',
-  tagline: 'Get seamless remote access to any Linux device',
-  url: 'https://docs.shellhub.io/',
+  title: 'Newpay Docs',
+  tagline: 'Onboarding PCT y PULL',
+  url: 'https://ipnewpay.netlify.app/',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
