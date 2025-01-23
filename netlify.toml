@@ -12,3 +12,9 @@
     Access-Control-Allow-Methods = "GET, POST, OPTIONS"
     Access-Control-Allow-Headers = "Authorization, Content-Type"
     Access-Control-Allow-Credentials = "true"
+
+[[redirects]]
+  from = "/scalar/*"
+  to = "https://proxy.scalar.com/:splat"
+  status = 200
+  force = true
