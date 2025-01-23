@@ -3,14 +3,14 @@ const fetch = require('node-fetch');
 exports.handler = async (event) => {
   const method = event.httpMethod;
 
-  // Encabezados comunes
+  // Encabezados CORS comunes
   const headers = {
     'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, DELETE',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Authorization, Content-Type',
   };
 
-  // Respuesta para solicitudes OPTIONS
+  // Manejo de solicitudes preflight
   if (method === 'OPTIONS') {
     return {
       statusCode: 200,
@@ -18,9 +18,9 @@ exports.handler = async (event) => {
     };
   }
 
-  // Proxy para otras solicitudes
+  // Redirige las solicitudes reales al servidor de destino
   const targetUrl = `https://wallet.release.newpay.com.ar${event.path}`;
-  
+
   try {
     const response = await fetch(targetUrl, {
       method,
@@ -39,11 +39,11 @@ exports.handler = async (event) => {
       body: responseBody,
     };
   } catch (error) {
-    console.error('Error proxying request:', error);
+    console.error('Error en la función proxy:', error);
     return {
       statusCode: 500,
       headers,
-      body: JSON.stringify({ message: 'Internal Server Error' }),
+      body: JSON.stringify({ message: 'Error en el servidor proxy' }),
     };
   }
 };
