@@ -185,6 +185,11 @@ const config = {
 module.exports = config;
 
 module.exports = {
+  title: 'Your Site Title',
+  tagline: 'Your Tagline',
+  url: 'https://ipnewpay.netlify.app', // Your site's URL
+  baseUrl: '/', // Typically '/' for root deployment
+  customFields: {
   webpack: {
     configure: {
       devServer: {
@@ -198,4 +203,5 @@ module.exports = {
       }
     }
   }
+}
 }
