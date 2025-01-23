@@ -1,11 +1,11 @@
 # Session recording
 
 :::tip
-This feature is only available in [ShellHub Cloud](https://cloud.shellhub.io)
+This feature is only available in [Newpay Docs Cloud](https://cloud.Newpay Docs.io)
 and Enterprise Edition.
 :::
 
-By default, ShellHub records all interactive SSH sessions,
+By default, Newpay Docs records all interactive SSH sessions,
 which includes all of the user activity that occurs during the session.
 Once recorded, it can be played back as a video by namespace's owner in the Web UI.
 

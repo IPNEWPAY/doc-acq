@@ -33,7 +33,7 @@ This command may overwrite an existing key with the same name.
 
 ## Add a public SSH key
 
-After you create an SSH key pair, you can upload your public key to ShellHub.
+After you create an SSH key pair, you can upload your public key to Newpay Docs.
 
 :::note
 

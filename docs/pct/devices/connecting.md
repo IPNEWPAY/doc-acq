@@ -15,7 +15,7 @@ After providing credentials, click on Connect button.
 
 ## Alternate connection method
 
-ShellHub is compatible with any SSH client that supports a minimum of SSH version 2.0.
+Newpay Docs is compatible with any SSH client that supports a minimum of SSH version 2.0.
 
 Regardless of the connection method you choose, you need to know its SSHID address.
 From Devices page, choose the device you want to connect to and copy the device's SSHID address.

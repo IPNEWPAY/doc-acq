@@ -1,7 +1,7 @@
 # Configuring your MFA
 
 :::note
-To enable MFA for your ShellHub account, you must provide a recovery email.
+To enable MFA for your Newpay Docs account, you must provide a recovery email.
 :::
 
 You can configure MFA using a Time-Based One-Time Password (TOTP) app. In order
@@ -13,7 +13,7 @@ same code to deactivate your MFA within 10 minutes.
 
 ## Enabling
 
-1. **Log In to ShellHub**: Access your ShellHub account using your credentials.
+1. **Log In to Newpay Docs**: Access your Newpay Docs account using your credentials.
 
 2. **Navigate to Settings Page**: Go to the Settings page by clicking on your
    profile icon and selecting "Settings".
@@ -44,7 +44,7 @@ additional verification method along with your password.
 
 ## Disabling
 
-If you no longer wish to use Multi-Factor Authentication for your ShellHub
+If you no longer wish to use Multi-Factor Authentication for your Newpay Docs
 account, you can disable it. Once MFA is disabled, you will no longer need to
 provide an additional verification method along with your password to log in to
 your account.
@@ -56,7 +56,7 @@ an Account with MFA](./recovery-access)
 
 ### With TOTP code
 
-1. **Log In to ShellHub**: Access your ShellHub account using your credentials.
+1. **Log In to Newpay Docs**: Access your Newpay Docs account using your credentials.
 
 2. **Navigate to Settings Page**: Go to the Settings page by clicking on your
    profile icon and selecting "Settings".
@@ -74,7 +74,7 @@ an Account with MFA](./recovery-access)
 
 ### With recovery code
 
-1. **Log In to ShellHub**: Access your ShellHub account using your credentials.
+1. **Log In to Newpay Docs**: Access your Newpay Docs account using your credentials.
 
 2. **Navigate to Settings Page**: Go to the Settings page by clicking on your
    profile icon and selecting "Settings".

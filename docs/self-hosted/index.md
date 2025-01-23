@@ -3,8 +3,8 @@ sidebar_position: 0
 ---
 # Introduction
 
-Welcome to the Self-Hosted section of the ShellHub documentation! Here, you will
-find everything you need to know about installing and running ShellHub on your
+Welcome to the Self-Hosted section of the Newpay Docs documentation! Here, you will
+find everything you need to know about installing and running Newpay Docs on your
 own infrastructure. Hosting on your own servers gives you complete control over
 your deployment, allowing you to customize and scale according to your needs.
 This can be particularly important for organizations with strict security or
@@ -14,7 +14,7 @@ compliance requirements.
 
 ## Community Edition
 
-The **Community Edition** is open-source and includes the core features of ShellHub.
+The **Community Edition** is open-source and includes the core features of Newpay Docs.
 It is perfect for individual developers, small teams, or organizations that do
 not require the advanced features of the **Enterprise Edition**.
 The Community Edition allows you to:
@@ -26,12 +26,12 @@ The Community Edition allows you to:
 
 ## Enterprise Edition
 
-The **Enterprise Edition** of ShellHub provides advanced features and enhanced support, making it suitable for larger organizations or those with specific enterprise needs. By self-hosting the **Enterprise Edition**, you can take advantage of:
+The **Enterprise Edition** of Newpay Docs provides advanced features and enhanced support, making it suitable for larger organizations or those with specific enterprise needs. By self-hosting the **Enterprise Edition**, you can take advantage of:
 
 - Advanced security features, including Multi-factor authentication (MFA).
 - SSH session recording for improved auditing and compliance.
 - Network security enhancements with configurable firewall rules.
-- Web-based admin console for easy management of your ShellHub instance.
+- Web-based admin console for easy management of your Newpay Docs instance.
 - Premium support with dedicated response times.
 
 :::note

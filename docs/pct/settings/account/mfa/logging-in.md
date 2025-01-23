@@ -17,7 +17,7 @@ recovery code.
    click "Verify."
 
 4. **Access Granted**: Upon successful verification, you'll be granted access
-   to your ShellHub account.
+   to your Newpay Docs account.
 
 ### Using Recovery Codes
 

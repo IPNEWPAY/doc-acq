@@ -9,7 +9,7 @@ administrator of the server instance.
 If you lose access to your TOTP app and all recovery codes, you can regain
 access to your account using your recovery email.
 
-1. **Log In to ShellHub**: Access your ShellHub account using your credentials.
+1. **Log In to Newpay Docs**: Access your Newpay Docs account using your credentials.
 
 2. **Navigate to the Settings Page**: Click on your profile icon and select
    “Settings.”

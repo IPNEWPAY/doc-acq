@@ -10,7 +10,7 @@ edited at any time.
 
 :::tip
 In the *cloud* environment, you can invite emails that are not yet associated
-with a ShellHub account. In such cases, the invite will be redirected to the
+with a Newpay Docs account. In such cases, the invite will be redirected to the
 registration page to create an account before they can accept the invitation.
 :::
 

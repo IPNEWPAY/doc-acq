@@ -13,7 +13,7 @@ $ make keygen
 Set the environment to development:
 
 ```
-$ echo "SHELLHUB_ENV=development" >> .env.override
+$ echo "Newpay Docs_ENV=development" >> .env.override
 ```
 
 Start the whole environment:
@@ -38,4 +38,4 @@ $ TENANT_ID=00000000-0000-4000-0000-000000000000 ./bin/add-namespace <namespace>
 
 > Don't change the value of `TENANT_ID`, this value is hardcoded during agent initialization in development mode.
 
-When you open ShellHub UI for the first time, be sure to accept pending device.
+When you open Newpay Docs UI for the first time, be sure to accept pending device.

@@ -7,17 +7,17 @@ import {config} from '@site/src/config';
 
 # Descripcion General
 
-Learn how to deploy a self-hosted ShellHub instance on your own server.
+Learn how to deploy a self-hosted Newpay Docs instance on your own server.
 
 :::tip
 
-If you prefer to use the cloud hosted service of ShellHub instead of
+If you prefer to use the cloud hosted service of Newpay Docs instead of
 self-hosting your own instance, you can skip this guide by creating
-an account in [ShellHub Cloud](https://shellhub.io).
+an account in [Newpay Docs Cloud](https://Newpay Docs.io).
 
 :::
 
-ShellHub is designed using the microservices design pattern, so that multiple small 
+Newpay Docs is designed using the microservices design pattern, so that multiple small 
 and isolated Docker containers make up the server.
 
 In order to eliminate environmental issues of missing, outdated, or mismatching dependencies,
@@ -34,15 +34,15 @@ Before continuing, make sure:
 
 ## Downloading the latest stable version {#downloading}
 
-<p>Checkout the latest stable version (<strong>{config.version}</strong>) of ShellHub as follows:</p>
+<p>Checkout the latest stable version (<strong>{config.version}</strong>) of Newpay Docs as follows:</p>
 
 <pre>
-git clone -b {config.version} https://github.com/shellhub-io/shellhub.git
+git clone -b {config.version} https://github.com/Newpay Docs-io/Newpay Docs.git
 </pre>
 
 ## Running {#running}
 
-Change to directory where ShellHub is located
+Change to directory where Newpay Docs is located
 (the one that you just cloned with git) and run:
 
 ```
@@ -53,7 +53,7 @@ make start
 Be patient, it can take up to 10 minutes for the first time.
 
 :::info
-Once ShellHub starts, it will always start automatically during the boot process
+Once Newpay Docs starts, it will always start automatically during the boot process
 unless you explicitly stop it.
 :::
 
@@ -66,7 +66,7 @@ and create an initial user:
 
 This will generate a signed URL. Access this URL to finalize the setup.
 
-Now you can access ShellHub on [http://localhost](http://localhost).
+Now you can access Newpay Docs on [http://localhost](http://localhost).
 
 ## Production Deployment
 
@@ -75,26 +75,26 @@ your deployment is ready for production usage.
 
 :::note
 Before going to production, you should first familiarize yourself with the
-ShellHub platform and how it works.
+Newpay Docs platform and how it works.
 :::
 
 ### Enable HTTPS
 
-ShellHub provides automatic HTTPS support using *Let's Encrypt* but if
+Newpay Docs provides automatic HTTPS support using *Let's Encrypt* but if
 you want to mananually configure HTTPS, this is commonly achieved by
 running NGINX with your certificates on your Docker host, service or
 load balancers in-front of the running container.
 
 #### Automatic HTTPS with Let's Encrypt
 
-ShellHub provides automatic HTTPS support using *Let's Encrypt*  with reasonable SSL settings, HTTP/2 and WebSockets support out-of-the-box.
+Newpay Docs provides automatic HTTPS support using *Let's Encrypt*  with reasonable SSL settings, HTTP/2 and WebSockets support out-of-the-box.
 
-Please see [`SHELLHUB_AUTO_SSL`](/self-hosted/configuring/#shellhub_auto_ssl) config option.
+Please see [`Newpay Docs_AUTO_SSL`](/self-hosted/configuring/#Newpay Docs_auto_ssl) config option.
 
 #### NGINX SSL terminator
 
 In case you are using NGINX as SSL terminator instead,
-make sure to set the `SHELLHUB_HTTP_PORT` to only bind to localhost by
+make sure to set the `Newpay Docs_HTTP_PORT` to only bind to localhost by
 adding the following line to the `docker-compose.override.yml`:
 
 ```yaml
@@ -102,7 +102,7 @@ version: '3.7'
 services:
   gateway:
       ports:
-       - "${SHELLHUB_BIND_ADDRESS}:${SHELLHUB_HTTP_PORT}:80"
+       - "${Newpay Docs_BIND_ADDRESS}:${Newpay Docs_HTTP_PORT}:80"
 ```
 
 When using NGINX do not forget to allow websocket traffic to be handled properly.
@@ -110,7 +110,7 @@ This can be done by adding the following blocks to your NGINX configuration:
 
 ```
  location / {
-     proxy_pass http://<SHELLHUB_BIND_ADDRESS>:<SHELLHUB_HTTP_PORT>;
+     proxy_pass http://<Newpay Docs_BIND_ADDRESS>:<Newpay Docs_HTTP_PORT>;
      proxy_http_version 1.1;
      proxy_set_header Upgrade $http_upgrade;
      proxy_set_header Connection "upgrade";
@@ -119,7 +119,7 @@ This can be done by adding the following blocks to your NGINX configuration:
 }
 
 location /ws/ {
-     proxy_pass http://<SHELLHUB_BIND_ADDRESS>:<SHELLHUB_HTTP_PORT>;
+     proxy_pass http://<Newpay Docs_BIND_ADDRESS>:<Newpay Docs_HTTP_PORT>;
      proxy_http_version 1.1;
      proxy_set_header Upgrade $http_upgrade;
      proxy_set_header Connection "upgrade";
@@ -127,7 +127,7 @@ location /ws/ {
 }
 
 location /ssh/ {
-     proxy_pass http://<SHELLHUB_BIND_ADDRESS>:<SHELLHUB_HTTP_PORT>;
+     proxy_pass http://<Newpay Docs_BIND_ADDRESS>:<Newpay Docs_HTTP_PORT>;
      proxy_http_version 1.1;
      proxy_set_header Upgrade $http_upgrade;
      proxy_set_header Connection "upgrade";
@@ -137,8 +137,8 @@ location /ssh/ {
 
 #### Layer 4 load balancer
 
-When putting a Layer 4 load balancer in-front of ShellHub you need to enable <Link to="https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt">PROXY protocol</Link>
-support on it and configure ShellHub to deal with PROXY protocol header by setting `SHELLHUB_PROXY=true` config option in the `docker-compose.override.yml`.
+When putting a Layer 4 load balancer in-front of Newpay Docs you need to enable <Link to="https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt">PROXY protocol</Link>
+support on it and configure Newpay Docs to deal with PROXY protocol header by setting `Newpay Docs_PROXY=true` config option in the `docker-compose.override.yml`.
 
 ### Setup MongoDB persistent volume
 
@@ -152,7 +152,7 @@ filesystem, and makes it easy for tools and applications on the host system
 to access the files.
 
 To achieve this, put the following in the `docker-compose.override.yml`
-file inside ShellHub project dir:
+file inside Newpay Docs project dir:
 
 ```yaml
 version: '3.7'

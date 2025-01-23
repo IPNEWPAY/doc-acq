@@ -1,6 +1,6 @@
 # Audit Logging
 
-Every time a SSH connection is made to ShellHub a session is created and stored on the server
+Every time a SSH connection is made to Newpay Docs a session is created and stored on the server
 for audit purposes[^1].
 
 Following information is stored on the server:
@@ -14,7 +14,7 @@ Following information is stored on the server:
 | Last Activity | Session's last activity timestamp       |
 
 [^1]:
-	In [ShellHub Cloud](https://cloud.shellhub.io) and Enterprise Edition,
+	In [Newpay Docs Cloud](https://cloud.Newpay Docs.io) and Enterprise Edition,
 	interactive SSH sessions are recorded, which includes all of the user
 	activity that occurs during the session so that it can later be
 	played back.

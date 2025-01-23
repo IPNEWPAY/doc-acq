@@ -1,12 +1,12 @@
 # Retrieving Your Tenant ID
 
-To connect your devices to ShellHub for remote management, you need your **Tenant ID**. This identifier links your device to your specific ShellHub namespace, ensuring secure and organized management of connected devices.
+To connect your devices to Newpay Docs for remote management, you need your **Tenant ID**. This identifier links your device to your specific Newpay Docs namespace, ensuring secure and organized management of connected devices.
 
 ## Steps to Retrieve Your Tenant ID
 
-1. **Log in to ShellHub**
+1. **Log in to Newpay Docs**
 
-   - Open [ShellHub Cloud](https://cloud.shellhub.io) in your browser or access your self-hosted ShellHub instance.
+   - Open [Newpay Docs Cloud](https://cloud.Newpay Docs.io) in your browser or access your self-hosted Newpay Docs instance.
    - Enter your credentials to log in.
 
 2. **Navigate to Your Namespace**

@@ -6,16 +6,16 @@ import {config} from '@site/src/config';
 
 # PCP
 
-ShellHub cuts regular releases for Community Edition to keep it
-as close to ShellHub Cloud as possible.
+Newpay Docs cuts regular releases for Community Edition to keep it
+as close to Newpay Docs Cloud as possible.
 
-We actively develop ShellHub to add new features and remove bugs, and encourage you to ensure your ShellHub self-hosted instance is using the most up-to-date version.
+We actively develop Newpay Docs to add new features and remove bugs, and encourage you to ensure your Newpay Docs self-hosted instance is using the most up-to-date version.
 
 ## Upgrading to a newer version
 
 ### Steps
 
-1. Change to ShellHub project dir
+1. Change to Newpay Docs project dir
 
 2. Stop the instance: `make stop`
 
@@ -29,28 +29,28 @@ Make sure to backup all MongoDB data files before proceeding with upgrade.
 
 ## Upgrade to Enterprise Edition
 
-This section describes how to upgrade from the ShellHub Community Edition to the ShellHub Enterprise.
+This section describes how to upgrade from the Newpay Docs Community Edition to the Newpay Docs Enterprise.
 
 ## Prerequisites
 
 To complete this guide you will need:
 
-* An [ShellHub](https://ossystems.com.br) Private Docker Registry account
-to pull ShellHub Enterprise containers.
-* A valid ShellHub Enterprise license file.
+* An [Newpay Docs](https://ossystems.com.br) Private Docker Registry account
+to pull Newpay Docs Enterprise containers.
+* A valid Newpay Docs Enterprise license file.
 
 :::tip
-[Contact us](mailto:contact@shellhub.io) to get a quote for the Enterprise version.
+[Contact us](mailto:contact@Newpay Docs.io) to get a quote for the Enterprise version.
 :::
 
 ## Configuring Enterprise
 
-Once the Open Source containers of the ShellHub are up and running, let's configure your environment
-to bring up the ShellHub Enterprise containers.
+Once the Open Source containers of the Newpay Docs are up and running, let's configure your environment
+to bring up the Newpay Docs Enterprise containers.
 
-### Pull ShellHub Enterprise containers
+### Pull Newpay Docs Enterprise containers
 
-First log in to the ShellHub Private Docker Registry with your credentials:
+First log in to the Newpay Docs Private Docker Registry with your credentials:
 
 ```
 docker login https://registry.infra.ossystems.io/
@@ -58,15 +58,15 @@ docker login https://registry.infra.ossystems.io/
 
 ### Update environment config
 
-Open the `.env.override` file inside ShellHub project dir and set the following variables:
+Open the `.env.override` file inside Newpay Docs project dir and set the following variables:
  
-* `SHELLHUB_ENTERPRISE=true`
-* `SHELLHUB_ENTERPRISE_ADMIN_USERNAME=<USER>`
-* `SHELLHUB_ENTERPRISE_ADMIN_PASSWORD=<PASSWORD>`
+* `Newpay Docs_ENTERPRISE=true`
+* `Newpay Docs_ENTERPRISE_ADMIN_USERNAME=<USER>`
+* `Newpay Docs_ENTERPRISE_ADMIN_PASSWORD=<PASSWORD>`
 
 ## Restart containers
 
-If ShellHub is up and running you need to restart containers by running:
+If Newpay Docs is up and running you need to restart containers by running:
 
 ```
 make restart

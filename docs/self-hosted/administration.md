@@ -4,15 +4,15 @@ sidebar_position: 4
 
 # Billetera
 
-ShellHub provides useful scripts for administering a self-hosted ShellHub instance. These scripts are located under the `./bin/cli` executable, which can be found at the root of the ShellHub project directory.
+Newpay Docs provides useful scripts for administering a self-hosted Newpay Docs instance. These scripts are located under the `./bin/cli` executable, which can be found at the root of the Newpay Docs project directory.
 
-> **_TIP:_** If you are managing a self-hosted instance of ShellHub Enterprise, all administrative tasks can be performed through the Admin Console.
+> **_TIP:_** If you are managing a self-hosted instance of Newpay Docs Enterprise, all administrative tasks can be performed through the Admin Console.
 
 ## User management scripts
 
 ### Create a user
 
-Add user account to a local running instance of ShellHub.
+Add user account to a local running instance of Newpay Docs.
 
 **Usage**: `./bin/cli user create <username> <password> <email>`
 
@@ -20,13 +20,13 @@ Add user account to a local running instance of ShellHub.
 
 ### Delete a user
 
-Delete user account from a local running instance of ShellHub.
+Delete user account from a local running instance of Newpay Docs.
 
 **Usage**: `./bin/cli user delete <username>`
 
 ### Reset a user's password
 
-Reset user account password from a local running instance of ShellHub.
+Reset user account password from a local running instance of Newpay Docs.
 
 **Usage**: `./bin/cli user password <username> <password>`
 
@@ -34,7 +34,7 @@ Reset user account password from a local running instance of ShellHub.
 
 ### Create a namespace
 
-Add namespace to a local running instance of ShellHub.
+Add namespace to a local running instance of Newpay Docs.
 
 **Usage**: `bin/namespace create <namespace> <owner> [tenant]`
 
@@ -44,13 +44,13 @@ Add namespace to a local running instance of ShellHub.
 
 ### Delete a namespace
 
-Delete namespace to a local running instance of ShellHub.
+Delete namespace to a local running instance of Newpay Docs.
 
 **Usage**: `./bin/cli namespace delete <namespace>`
 
 ### Add a member to the namespace
 
-Add a user to a specific namespace in a locally running instance of ShellHub.
+Add a user to a specific namespace in a locally running instance of Newpay Docs.
 
 **Usage**: `./bin/cli namespace member add <username> <namespace> <role>`
 
@@ -58,6 +58,6 @@ Add a user to a specific namespace in a locally running instance of ShellHub.
 
 ### Remove namespace member
 
-Delete user from a specific namespace to a local running instance of ShellHub.
+Delete user from a specific namespace to a local running instance of Newpay Docs.
 
 **Usage**: `./bin/cli namespace member remove <username> <namespace>`

@@ -1,13 +1,13 @@
 # Tagging devices
 
-Device tags in ShellHub are a powerful feature that allows you to categorize and manage your devices more efficiently. By tagging devices, you can easily filter, search, and organize them based on specific criteria or attributes.
+Device tags in Newpay Docs are a powerful feature that allows you to categorize and manage your devices more efficiently. By tagging devices, you can easily filter, search, and organize them based on specific criteria or attributes.
 
 ## Adding Tags to a Device
 
 To add tags to a device, follow these steps:
 
 1. **Navigate to the Devices Page:**
-   Log in to your ShellHub account and go to the "Devices" page.
+   Log in to your Newpay Docs account and go to the "Devices" page.
 
 2. **Edit Tags:**
    In the respective Actions menu, click on "Edit tags" option.
@@ -29,7 +29,7 @@ You can use at maximum 3 tags per device. No special characters are allowed.
 To view devices by tags, use the following steps:
 
 1. **Navigate to the Devices Page:**
-   Go to the "Devices" page in your ShellHub account.
+   Go to the "Devices" page in your Newpay Docs account.
 
 2. **Filter by Tags:**
    Use the Tags menu to select the tags you want to filter.
@@ -45,11 +45,11 @@ To view devices by tags, use the following steps:
 You can manage all tags on your namespace in a single place:
 
 1. **Navigate to the Settings Page:**
-Go to the "Settings" page in your ShellHub account.
+Go to the "Settings" page in your Newpay Docs account.
 
 2. **Navigate to the Tags tab:**
-   Click the "Tags" tab in the ShellHub settings.
-   You can also go directly from [here](https://cloud.shellhub.io/settings/tags).
+   Click the "Tags" tab in the Newpay Docs settings.
+   You can also go directly from [here](https://cloud.Newpay Docs.io/settings/tags).
 
 ![](/img/tags-settings.png)
 
@@ -68,4 +68,4 @@ Go to the "Settings" page in your ShellHub account.
 - **Location Tags:** Tag devices based on their physical location, such as `office`, `datacenter`, `remote`.
 - **Role Tags:** Tag devices based on their role or purpose, such as `web-server`, `database`, `backup`.
 
-By effectively using device tags in ShellHub, you can streamline device management, improve organization, and enhance your ability to quickly locate and manage devices within your infrastructure.
+By effectively using device tags in Newpay Docs, you can streamline device management, improve organization, and enhance your ability to quickly locate and manage devices within your infrastructure.

@@ -11,5 +11,5 @@ return a `401 Unauthorized` status code.
 For example, to use an API key within cURL:
 
 ```bash
-curl -X GET "https://cloud.shellhub.io/api/" -H "X-API-Key: $SHELLHUB_API_KEY"
+curl -X GET "https://cloud.Newpay Docs.io/api/" -H "X-API-Key: $Newpay Docs_API_KEY"
 ```
