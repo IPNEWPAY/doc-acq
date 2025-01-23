@@ -183,3 +183,19 @@ const config = {
 };
 
 module.exports = config;
+
+module.exports = {
+  webpack: {
+    configure: {
+      devServer: {
+        proxy: {
+          '/v1': {
+            target: 'https://wallet.release.newpay.com.ar',
+            changeOrigin: true,
+            secure: false
+          }
+        }
+      }
+    }
+  }
+}
