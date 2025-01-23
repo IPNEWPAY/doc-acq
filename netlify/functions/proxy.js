@@ -2,14 +2,15 @@ const fetch = require('node-fetch');
 
 exports.handler = async (event) => {
   const method = event.httpMethod;
+
+  // Encabezados comunes
   const headers = {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*', // Permitir todos los orígenes
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, DELETE',
     'Access-Control-Allow-Headers': 'Authorization, Content-Type',
   };
 
-  // Manejar solicitudes preflight (OPTIONS)
+  // Respuesta para solicitudes OPTIONS
   if (method === 'OPTIONS') {
     return {
       statusCode: 200,
@@ -17,7 +18,7 @@ exports.handler = async (event) => {
     };
   }
 
-  // Proxy para otras solicitudes (POST, GET, etc.)
+  // Proxy para otras solicitudes
   const targetUrl = `https://wallet.release.newpay.com.ar${event.path}`;
   
   try {

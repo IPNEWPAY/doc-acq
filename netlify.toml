@@ -1,15 +1,13 @@
 [build]
-  publish = "build" # Directorio donde se genera tu sitio (cámbialo según tu configuración)
+  publish = "build"
   command = "npm run build"
 
 [functions]
-  directory = "netlify/functions" # Directorio para tus funciones serverless (si las usas)
-  node_bundler = "esbuild"       # Bundler recomendado para funciones serverless
+  directory = "netlify/functions"
 
 [[headers]]
-  for = "/*" # Aplica encabezados a todas las rutas
+  for = "/*"
   [headers.values]
-    Access-Control-Allow-Origin = "*" # Permitir solicitudes desde cualquier origen
+    Access-Control-Allow-Origin = "*"
     Access-Control-Allow-Methods = "GET, POST, OPTIONS, PUT, DELETE"
     Access-Control-Allow-Headers = "Authorization, Content-Type"
-    Access-Control-Allow-Credentials = "true" # Para cookies o encabezados seguros
