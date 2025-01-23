@@ -10,7 +10,7 @@ import DocCard from '@theme/DocCard';
 
 Bienvenido a Newpay Docs, una plataforma que centraliza la integracion contractual y tecnica para una mejor solucion de onboarding. Te invitamos a descubrirla para que puedas entender mejor la solucion que estas buscando. Luego podras agendar un espacio para un kickoff para avanzar en nuestro onboarding. Te esperamos!
 
-## Conoces nuestros productos?
+## Conoces nuestras soluciones?
 
 ![](/img/flujo.png)
 
