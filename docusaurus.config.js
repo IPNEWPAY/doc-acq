@@ -165,21 +165,25 @@ const config = {
       },
     }),
 
-  plugins: [
-    [
-    '@scalar/docusaurus',
-    {
-      label: 'Developers',
-      route: '/scalar',
-      configuration: {
-        spec: {
-          // Put the URL to your OpenAPI document here:
-          url: '/swagger.yaml',
+    plugins: [
+      [
+        '@scalar/docusaurus',
+        {
+          label: 'Developers',
+          route: '/scalar',
+          configuration: {
+            spec: {
+              // Ruta de tu archivo Swagger
+              url: '/swagger.yaml',
+            },
+            proxy: {
+              enabled: true, // Activa el proxy
+              url: 'https://proxy.scalar.com', // URL del proxy
+            },
+          },
         },
-      },
-    },
-  ],
-  ],
+      ],
+    ],
 };
 
 module.exports = config;
