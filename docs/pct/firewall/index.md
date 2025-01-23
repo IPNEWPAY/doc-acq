@@ -1,48 +1,41 @@
 # QR
 
 :::info
-This feature is only available in [ShellHub Cloud](https://shellhub.io) and
-[ShellHub Enterprise](https://www.shellhub.io/products/enterprise).
+La construccion del QR se basa en el standard [QREMVco](https://www.emvco.com/specifications/emv-qr-code-specification-for-payment-systems-merchant-presented-mode/), [CIMPRA 525](https://www.bcra.gob.ar/pdfs/sistemasfinancierosydepagos/SNP3525.pdf), [CIMPRA 530](https://www.bcra.gob.ar/Pdfs/SistemasFinancierosYdePagos/Boletin_CIMPRA_530.pdf), 
 :::
 
-Firewall rules are security policies that control access to devices in
-ShellHub. They serve as a critical security mechanism for managing connections
-to your devices based on various parameters and conditions. Each rule can be
-applied globally, to specific devices using regular expressions, or via tags.
+# QR RAW
+```
+00020101021240250013ar.com.epagos0104SERV41380013ar.com.epagos981130598910045990201501500113071508429152049399530303254031205802AR5907E-Pagos6013Vicente%20Lopez6108CPA1638A80400013ar.com.epagos010725368930208IMPUESTO63046DC5
+```
 
-[Members](../settings/namespace/members/index.md) with administrative
-privileges can create and manage firewall rules. Rules can be enabled or
-disabled at any time, providing flexibility in enforcing security policies
-without removing the rules entirely.
 
-Rules are enforced based on **Rule Priority** in descending order. A lower
-priority number indicates a higher precedence, and both positive and negative
-numbers can be used for fine-grained prioritization.
+# Tabla de Campos QR EMVCo
 
-:::tip
-When creating rules, consider leaving gaps between priority numbers (e.g., 10,
-20, 30).
-:::
+| **Campo Principal** | **Subcampo** | **Longitud** | **Contenido**                  | **Descripción**                      |
+|----------------------|--------------|--------------|--------------------------------|--------------------------------------|
+| 00                   |              | 2            | 1                              |                                      |
+| 01                   |              | 2            | 12                             | 11 Estatico,     12 Dinamico                                |
+| 40                   |              | 25           | 0013ar.com.epagos0104SERV      | Información del comercio             |
+|                      | 00           | 13           | ar.com.epagos                  |                                      |
+|                      | 01           | 04           | SERV                           |                                      |
+| 41                   |              | 38           | 0013ar.com.epagos981130598910045990201 | Aceptador del QR                    |
+|                      | 00           | 13           | ar.com.epagos                  | Dominio invertido del aceptador      |
+|                      | 98           | 11           | 30598910045                    | CUIT del aceptador                   |
+|                      | 99           | 02           | 01                             | Flag de IEP                          |
+| 50                   |              | 15           | 001130715084291                | Número de CUIT del comercio          |
+|                      | 00           | 11           | 30715084291                    |                                      |
+| 52                   |              | 4            | 9399                           | Categoría del comercio               |
+| 53                   |              | 3            | 032                            | Moneda (ARS)                         |
+| 54                   |              | 3            | 120                            | Importe                              |
+| 58                   |              | 2            | AR                             | País del comercio                    |
+| 59                   |              | 7            | E-PAGOS                        | Razón social del comercio            |
+| 60                   |              | 13           | Vicente Lopez                  | Ciudad del comercio                  |
+| 61                   |              | 08           | CPA1638A                       | Código postal completo (8 dígitos)   |
+| 80                   |              | 41           | 0013ar.com.epagos010725368930208IMPUESTO | Información del adquirente          |
+|                      | 00           | 13           | ar.com.epagos                  |                                      |
+|                      | 01           | 07           | 2536893                        |                                      |
+|                      | 02           | 08           | IMPUESTO                       |                                      |
+| 63                   |              | 4            | 6DC5                           | CRC                                  |
 
-## Common Use Cases
 
-Firewall rules can be applied to a wide range of security requirements. Here
-are some common scenarios:
-
-1. **Corporate Network Access**
-   - Allow connections only from company IPs: `10.0.0.*` and `172.16.*.*`
-
-2. **Root Access Prevention**
-   - Deny all connections to the `root` user for enhanced security
-
-3. **Administrative Control**
-   - Restrict admin users to specific networks: Allow `admin*` from `192.168.1.*`
-
-4. **Development Environment**
-   - Allow only `dev-*` users to access devices tagged with `development`
-
-5. **Production Security**
-   - Allow access to `prod-*` hostnames only from VPN IPs
-
-6. **Contractor Access**
-   - Restrict contractors to devices tagged with `contractor-accessible`

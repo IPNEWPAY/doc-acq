@@ -3,6 +3,7 @@ sidebar_position: 3
 ---
 import Formulario from '@site/src/pages/formulario';
 import CopyableBox from '@site/src/components/CopyableBox';
+import { QRCodeCanvas } from 'qrcode.react';
 
 
 # Sandbox y otras tools
@@ -23,3 +24,4 @@ Es importante que hayas participado del [kickoff](/kickoff) con nuestro equipo c
   label="Ambiente Sandbox"
   url="https://sandbox.release.newpay.com.ar"
 />
+
