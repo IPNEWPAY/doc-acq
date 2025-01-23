@@ -5,10 +5,7 @@
 [functions]
   directory = "netlify/functions"
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "*"
-    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
-    Access-Control-Allow-Headers = "Authorization, Content-Type"
-    Access-Control-Allow-Credentials = "true"
+[[redirects]]
+  from = "/v1/*"
+  to = "/.netlify/functions/proxy"
+  status = 200

@@ -1,46 +1,36 @@
-const fetch = require('node-fetch');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
-exports.handler = async (event) => {
-  const method = event.httpMethod;
-  const headers = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Authorization, Content-Type',
-  };
-
-  if (method === 'OPTIONS') {
-    return {
-      statusCode: 200,
-      headers,
-    };
-  }
-
-  const targetUrl = `https://wallet.release.newpay.com.ar${event.path}`;
-  try {
-    const response = await fetch(targetUrl, {
-      method,
-      headers: {
-        ...event.headers,
-        Host: 'wallet.release.newpay.com.ar',
+exports.handler = async (event, context) => {
+  return new Promise((resolve, reject) => {
+    const proxy = createProxyMiddleware({
+      target: 'https://wallet.release.newpay.com.ar',
+      changeOrigin: true,
+      pathRewrite: {
+        '^/.netlify/functions/proxy': '', // Elimina la ruta del proxy en Netlify
       },
-      body: event.body,
+      onProxyRes: (proxyRes) => {
+        proxyRes.headers['Access-Control-Allow-Origin'] = '*';
+        proxyRes.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS';
+        proxyRes.headers['Access-Control-Allow-Headers'] = 'Authorization, Content-Type';
+      },
     });
 
-    const responseBody = await response.text();
-    return {
-      statusCode: response.status,
-      headers: {
-        ...headers,
-        'Content-Type': response.headers.get('Content-Type'),
+    const fakeRes = {
+      writeHead: (status, headers) => {
+        context.statusCode = status;
+        context.headers = headers;
       },
-      body: responseBody,
+      end: (body) => {
+        resolve({
+          statusCode: context.statusCode,
+          headers: context.headers,
+          body: body,
+        });
+      },
     };
-  } catch (error) {
-    console.error('Proxy error:', error);
-    return {
-      statusCode: 500,
-      headers,
-      body: JSON.stringify({ message: 'Internal server error' }),
-    };
-  }
+
+    proxy(event, fakeRes, (error) => {
+      if (error) reject(error);
+    });
+  });
 };
