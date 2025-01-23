@@ -174,7 +174,7 @@ const config = {
           configuration: {
             spec: {
               // Ruta de tu archivo Swagger
-              url: '/swagger.yaml',
+              proxyUrl: '/swagger.yaml',
             },
             proxy: {
               enabled: true, // Activa el proxy
