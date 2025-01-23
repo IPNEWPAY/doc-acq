@@ -1,2 +1,1 @@
-OPTIONS /v1/* https://proxy.scalar.com/?scalar_url=https://wallet.release.newpay.com.ar/v1/:splat 200
-/v1/* https://proxy.scalar.com/?scalar_url=https://wallet.release.newpay.com.ar/v1/:splat 200
+/v1/* /.netlify/functions/proxy 200
