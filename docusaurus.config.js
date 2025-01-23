@@ -178,7 +178,7 @@ const config = {
             },
             proxy: {
               enabled: true, // Activa el proxy
-              url: 'https://proxy.scalar.com', // URL del proxy
+              proxyUrl: 'https://proxy.scalar.com', // URL del proxy
             },
           },
         },
