@@ -6,11 +6,23 @@ import 'reactflow/dist/style.css';
 const initialNodes = [
   { id: '1', position: { x: -100, y: -200 }, data: { label: 'A' } },
   { id: '2', position: { x: 100, y: 200 }, data: { label: 'B' } },
+  { id: '3', position: { x: 400, y: 600 }, data: { label: 'C' } },
 ];
 
 const initialEdges = [
-  { id: '1->2', type: 'animatedSvg', source: '1', target: '2' },
-];
+    {
+      id: 'edge1',
+      type: 'animatedSvg',
+      source: '1',
+      target: '2',
+      data: {
+        delayAtoB: '0s', // Inicio de A -> B
+        delayBtoA: '5s', // Inicio de B -> A
+        colorAtoB: '#ff0073', // Color de A -> B
+        colorBtoA: '#0073ff', // Color de B -> A
+      },
+    },
+  ];
 
 const edgeTypes = {
   animatedSvg: AnimatedSVGEdge,
@@ -21,7 +33,7 @@ const AnimatedEdgesFlow = () => {
   const [edges, , onEdgesChange] = useEdgesState(initialEdges);
 
   return (
-    <div style={{ width: '100%', height: '500px' }}> {/* Contenedor con dimensiones */}
+    <div style={{ width: '100%', height: '500px' }}> {/* Contenedor */}
       <ReactFlow
         nodes={nodes}
         edges={edges}
