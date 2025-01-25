@@ -17,11 +17,23 @@ const initialEdges = [
       target: '2',
       data: {
         delayAtoB: '0s', // Inicio de A -> B
-        delayBtoA: '5s', // Inicio de B -> A
+        delayBtoA: '15s', // Inicio de B -> A
         colorAtoB: '#ff0073', // Color de A -> B
         colorBtoA: '#0073ff', // Color de B -> A
       },
     },
+    {
+        id: 'edge2',
+        type: 'animatedSvg',
+        source: '2',
+        target: '3',
+        data: {
+          delayAtoB: '5s', // Inicio de A -> B
+          delayBtoA: '10s', // Inicio de B -> A
+          colorAtoB: '#ff0073', // Color de A -> B
+          colorBtoA: '#0073ff', // Color de B -> A
+        },
+      },
   ];
 
 const edgeTypes = {
