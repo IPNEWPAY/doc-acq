@@ -1,5 +1,7 @@
-# QR
-
+---
+sidebar_position: 2
+---
+# Ejemplo
 :::info
 La construccion del QR se basa en el standard [QREMVco](https://www.emvco.com/specifications/emv-qr-code-specification-for-payment-systems-merchant-presented-mode/), [CIMPRA 525](https://www.bcra.gob.ar/pdfs/sistemasfinancierosydepagos/SNP3525.pdf), [CIMPRA 530](https://www.bcra.gob.ar/Pdfs/SistemasFinancierosYdePagos/Boletin_CIMPRA_530.pdf), 
 :::
