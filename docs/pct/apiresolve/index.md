@@ -1,13 +1,13 @@
 # API Resolve
 
 :::info
-La construccion del API Resolve se basa en la, [CIMPRA 525](https://www.bcra.gob.ar/pdfs/sistemasfinancierosydepagos/SNP3525.pdf), [CIMPRA 530](https://www.bcra.gob.ar/Pdfs/SistemasFinancierosYdePagos/Boletin_CIMPRA_530.pdf), 
+La construccion del API Resolve se basa en la, [CIMPRA 525](https://www.bcra.gob.ar/pdfs/sistemasfinancierosydepagos/SNP3525.pdf), [CIMPRA 530](https://www.bcra.gob.ar/Pdfs/SistemasFinancierosYdePagos/Boletin_CIMPRA_530.pdf), [CIMPRA 535](https://www.bcra.gob.ar/Pdfs/SistemasFinancierosYdePagos/Boletin_CIMPRA_535.pdf) 
 :::
 
 La API Resolve es un componente fundamental en el ecosistema de pagos con transferencia en Argentina, especialmente dentro del marco de Transferencias 3.0. Su función principal es proveer información adicional sobre una transacción de pago cuando esta no se encuentra completamente contenida en el código QR. Esta API se activa cuando un código QR dinámico indica que requiere información adicional para completar la transacción.
 
 ## Indicador en el codigo QR
-El código QR incluye un subcampo (99) dentro del campo de "Merchant Account Information" que indica si se utiliza o no la API Resolve. Un valor de "1" en este subcampo indica que la API debe ser llamada. Si el valor es "0", la API no se debe usar.
+El código QR incluye un subcampo (99) dentro del campo de "Merchant Account Information" que indica si se utiliza o no la API Resolve. Un valor de "01" en este subcampo indica que la API debe ser llamada. Si el valor es "00", la API no se debe usar.
 
 ## Ausencias de datos en el QR
 Si el código QR no incluye toda la información necesaria (como el monto exacto en un pago de monto abierto) para completar el pago, la API Resolve se utiliza para obtener los datos faltantes
@@ -32,7 +32,7 @@ La API Resolve proporciona una variedad de datos que complementan la informació
         *    name: Nombre del comercio.
         *    identification_number: Número de identificación del comercio (CUIT).
         *    account: Número de cuenta del comercio (CBU o CVU).
-        *    mcc: Código de categoría del comercio (Merchant Category Code) según VISA
+        *    mcc: Código de categoría del comercio (Merchant Category Code) según [BCRA](https://www.bcra.gob.ar/Pdfs/SistemasFinancierosYdePagos/MCC_VISA_AFIP_2022_6_2.pdf)
         *    image: URL de la imagen del comercio (opcional).
         *   postal_code: Código postal del comercio.
 

@@ -56,7 +56,7 @@ Solicitamos encarecidamente que se utilice el campo 24 o 41 unicamente para esta
 :::
 
 *    **Merchant Category Code (ID "52"):**
-        * Explicación: Código de categoría del comercio, adoptando los códigos de clasificación del esquema de tarjetas VISA
+        * Explicación: Código de categoría del comercio [BCRA](https://www.bcra.gob.ar/Pdfs/SistemasFinancierosYdePagos/MCC_VISA_AFIP_2022_6_2.pdf)
         * Formato: Numérico (N)
         * Longitud: 04
         * Presencia: Obligatorio (M)

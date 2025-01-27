@@ -5,9 +5,7 @@ import AnimatedEdgesFlow from '@site/src/components/AnimatedEdgesFlow';
 
 # Pagos con Transferencia
 
-Welcome to the Newpay Docs User Guides! This section is designed to help you understand
-and make the most of Newpay Docs, a powerful and versatile tool for managing remote access to your devices.
-Whether you are a beginner or an advanced user, these guides are designed to help you every step of the way.
+Los Pagos con Transferencias representan una arquitectura de pago electrónico que se basa en la transferencia de fondos entre cuentas. Se basa en protocolos y APIs que promueven la interoperabilidad entre billeteras, comercios y adquirentes/agregadores. Esta arquitectura permite transacciones inmediatas y seguras, facilitando el onboarding de las billeteras y los comercios.
 
 
 <AnimatedEdgesFlow />
