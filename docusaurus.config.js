@@ -151,7 +151,7 @@ const config = {
       {
         name: '@scalar/docusaurus', // Agrega esta línea
         label: 'Developers',
-        route: '/scalar',
+        route: '/developers/portalApi/pct_for_wallets',
         configuration: {
           spec: {
             url: '/swagger.yaml', // Ruta de tu archivo Swagger

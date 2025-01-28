@@ -5,8 +5,8 @@ info:
 security:
   - administratorBearerAuth: []
 servers:
+- url: https://sandbox.release.newpay.com.ar
 - url: https://wallet.release.newpay.com.ar
-- url: https://wallet.newpay.com.ar
 paths:
 
   /v1/payments:
