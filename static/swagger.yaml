@@ -34,19 +34,61 @@ paths:
                 description: Se procesa correctamente un pago de 100 USD.
                 value:
                   amount: 100
-                  currency: USD
+                  currency: ARS
               ejemplo-2:
-                summary: Pago exitoso EN DOLARUCOS.
+                summary: Rechazo AD99.
                 description: Se procesa correctamente un pago de 100 USD.
                 value:
                   amount: 200
-                  currency: EUR
+                  currency: ARS
               ejemplo-error:
-                summary: Pago con eRROR.
+                summary: Rechazo ACE99.
                 description: Se procesa correctamente un pago de 100 USD.
                 value:
-                  amount: -50
-                  currency: USD
+                  amount: 50
+                  currency: ARS
+              ejemplo-error:
+                summary: Rechazo AD01.
+                description: Se procesa correctamente un pago de 100 USD.
+                value:
+                  amount: 50
+                  currency: ARS
+              ejemplo-error:
+                summary: Rechazo AD02.
+                description: Se procesa correctamente un pago de 100 USD.
+                value:
+                  amount: 50
+                  currency: ARS
+              ejemplo-error:
+                summary: Rechazo AD03.
+                description: Se procesa correctamente un pago de 100 USD.
+                value:
+                  amount: 50
+                  currency: ARS
+              ejemplo-error:
+                summary: Rechazo AD04.
+                description: Se procesa correctamente un pago de 100 USD.
+                value:
+                  amount: 50
+                  currency: ARS
+              ejemplo-error:
+                summary: Rechazo QRNOTFOUND.
+                description: Se procesa correctamente un pago de 100 USD.
+                value:
+                  amount: 50
+                  currency: ARS
+              ejemplo-error:
+                summary: Rechazo AMOUNT_ERR.
+                description: Se procesa correctamente un pago de 100 USD.
+                value:
+                  amount: 50
+                  currency: ARS
+              ejemplo-error:
+                summary: Rechazo INVALID_ACQUIRER_ID.
+                description: Se procesa correctamente un pago de 100 USD.
+                value:
+                  amount: 50
+                  currency: ARS
         required: true   
       responses:
         200:
