@@ -41,49 +41,49 @@ paths:
                 value:
                   amount: 200
                   currency: ARS
-              ejemplo-error:
+              ejemplo-3:
                 summary: Rechazo ACE99.
                 description: Se procesa correctamente un pago de 100 USD.
                 value:
                   amount: 50
                   currency: ARS
-              ejemplo-error:
+              ejemplo-4:
                 summary: Rechazo AD01.
                 description: Se procesa correctamente un pago de 100 USD.
                 value:
                   amount: 50
                   currency: ARS
-              ejemplo-error:
+              ejemplo-5:
                 summary: Rechazo AD02.
                 description: Se procesa correctamente un pago de 100 USD.
                 value:
                   amount: 50
                   currency: ARS
-              ejemplo-error:
+              ejemplo-6:
                 summary: Rechazo AD03.
                 description: Se procesa correctamente un pago de 100 USD.
                 value:
                   amount: 50
                   currency: ARS
-              ejemplo-error:
+              ejemplo-7:
                 summary: Rechazo AD04.
                 description: Se procesa correctamente un pago de 100 USD.
                 value:
                   amount: 50
                   currency: ARS
-              ejemplo-error:
+              ejemplo-8:
                 summary: Rechazo QRNOTFOUND.
                 description: Se procesa correctamente un pago de 100 USD.
                 value:
                   amount: 50
                   currency: ARS
-              ejemplo-error:
+              ejemplo-10:
                 summary: Rechazo AMOUNT_ERR.
                 description: Se procesa correctamente un pago de 100 USD.
                 value:
                   amount: 50
                   currency: ARS
-              ejemplo-error:
+              ejemplo-11:
                 summary: Rechazo INVALID_ACQUIRER_ID.
                 description: Se procesa correctamente un pago de 100 USD.
                 value:
