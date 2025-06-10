@@ -158,16 +158,17 @@ ul.menu__list > li > a.menu__link--active {
 .navbar__brand {
   display: flex;
   align-items: center; /* Centra el logo verticalmente */
-  height: auto;        /* Permite que se ajuste al tamaño del logo */
 }
 
-.navbar__logo {
-  height: 10vh; /* Tamaño basado en la altura de la ventana */
+.navbar__logo img {
+  height: 20px !important;
   width: auto;
+  margin-right: 6px;
+  vertical-align: middle; /* Opcional, refina aún más */
 }
 
 .navbar {
-  height: 90px; /* Ajusta para acomodar el logo más grande */
+  height: 60px; /* Ajusta para acomodar el logo más grande */
 }
 
 .copyable-box {
@@ -212,4 +213,174 @@ ul.menu__list > li > a.menu__link--active {
 
 .copyable-box-copy:hover {
   background-color: #0056b3;
+}
+
+.cards__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cards__container .card {
+  flex: 1 1 30%;
+  border-radius: 8px;
+  background: var(--ifm-card-background-color);
+  transition: transform 0.2s ease;
+}
+
+.cards__container .card:hover {
+  transform: translateY(-4px);
+}
+
+/* ---------- GENERAL ---------- */
+.api-reference {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: #f8f9fc;
+  color: #1a1a1a;
+}
+
+/* ---------- TÍTULOS ---------- */
+.api-reference h1,
+.api-reference h2,
+.api-reference h3 {
+  font-weight: 600;
+  color: #101828;
+}
+
+.api-reference h1 {
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.api-reference h2 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.api-reference h3 {
+  font-size: 1.2rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- TEXTO GENERAL ---------- */
+.api-reference p,
+.api-reference li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #344054;
+}
+
+/* ---------- BOTÓN "Run in Postman" ---------- */
+.api-reference .postman-run-button {
+  background-color: #ff6b00;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.api-reference .postman-run-button:hover {
+  background-color: #ff8934;
+}
+
+/* ---------- CAJAS DE AUTH Y SERVER ---------- */
+.api-reference .authentication,
+.api-reference .server {
+  background-color: #ffffff;
+  border: 1px solid #d0d5dd;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* ---------- ETIQUETAS DE MÉTODOS ---------- */
+.api-reference .http-method {
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.api-reference .http-method.get {
+  background-color: #10b981;
+}
+
+.api-reference .http-method.post {
+  background-color: #3b82f6;
+}
+
+.api-reference .http-method.put {
+  background-color: #f59e0b;
+}
+
+.api-reference .http-method.delete {
+  background-color: #ef4444;
+}
+
+.api-reference h2:has(+ .scalar-auth) {
+  font-size: 1.25rem !important;
+  font-weight: 500 !important;
+  margin-bottom: 0.5rem;
+  color: #475467; /* gris medio */
+}
+
+.api-reference h2 {
+  font-size: 1.25rem !important;
+  font-weight: 500 !important;
+}
+
+.api-reference h2 sup {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-left: 6px;
+}
+
+.api-reference h2 > .inline-flex span:first-child {
+  font-size: 1.25rem !important;
+  font-weight: 500 !important;
+  color: #475467 !important;
+}
+
+.api-reference span[data-v-653ceb53] {
+  font-size: 1rem !important; /* o 16px */
+  font-weight: 500 !important;
+  color: #475467 !important;
+}
+
+.api-reference h2:has(span:contains("Authentication")) {
+  font-size: 1.2rem !important;
+}
+
+.api-reference h2 span {
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  color: #555 !important; /* menos contraste */
+}
+
+/* Corrige tamaño de h2 que precede a .scalar-auth */
+.api-reference h2 + .scalar-auth {
+  margin-top: -0.5rem;
+}
+
+.api-reference h2 {
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  margin-bottom: 0.3rem !important;
+  color: #475467 !important;
+}
+
+.api-reference h2 span {
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  color: #475467 !important;
 }

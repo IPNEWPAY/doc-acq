@@ -7,15 +7,19 @@ import { themes as prismThemes } from 'prism-react-renderer';
 const config = {
   title: 'Newpay Docs',
   tagline: 'Onboarding PCT y PULL',
-  url: 'https://ipnewpay.netlify.app/',
-  baseUrl: '/',
+  url: 'https://leonardoespindola.github.io',
+  baseUrl: '/dlcs/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.png',
+  favicon: 'img/icon.ico',
+  markdown: {
+  mermaid: true,
+},
+themes: ['@docusaurus/theme-mermaid'],
 
   // GitHub pages deployment config.
-  organizationName: 'facebook', // Your GitHub org/user name.
-  projectName: 'docusaurus', // Your repo name.
+  organizationName: 'leonardoespindola', // Your GitHub org/user name.
+  projectName: 'ipnewpay', // Your repo name.
 
   i18n: {
     defaultLocale: 'en',
@@ -44,20 +48,6 @@ const config = {
         },
       },
     ],
-    [
-      'redocusaurus',
-      {
-        specs: [
-          {
-            id: 'community-openapi',
-            spec: './static/swagger.yaml', // Ruta al archivo Swagger
-          },
-        ],
-        theme: {
-          primaryColor: '#1890ff',
-        },
-      },
-    ],
   ],
 
   headTags: [
@@ -81,34 +71,16 @@ const config = {
       },
     },
     navbar: {
-      hideOnScroll: false,
-      logo: {
-        alt: 'Newpay',
-        src: 'img/logo.svg',
-        style: {
-          width: 'auto',
-          height: '80px',
-          marginLeft: '2px',
-          verticalAlign: 'center',
-        },
-      },
+    title: 'Docs Aceptador',
+    logo: {
+    alt: 'Logo',
+    src: 'img/icon.ico', // ✅ Ruta desde static
+  },
       items: [
-        {
-          to: 'https://cloud.shellhub.io',
-          label: 'Get Started',
-          className: 'nav-link_getting-started',
-          position: 'right',
-        },
-        {
-          href: 'https://github.com/shellhub-io/shellhub/',
-          position: 'right',
-          className: 'header-github-link',
-        },
-        {
-          type: 'search',
-          position: 'right',
-        },
-      ],
+    { href: '/dlcs/developers/portalApi/pct_for_acquirers', label: 'API de Aceptador', position: 'left' },
+    { href: '/dlcs/developers/portalApi/pct_for_newpay', label: 'API de Newpay', position: 'left' }
+    ,
+  ],
     },
     prism: {
       theme: prismThemes.github,
@@ -145,22 +117,74 @@ const config = {
     },
   },
 
-  plugins: [
-    [
-      '@scalar/docusaurus',
-      {
-        name: '@scalar/docusaurus', // Agrega esta línea
-        label: 'Developers',
-        route: '/developers/portalApi/pct_for_wallets',
-        configuration: {
-          spec: {
-            url: '/swagger.yaml', // Ruta de tu archivo Swagger
-          },
-          proxyUrl: 'https://proxy.scalar.com', // Proxy para solucionar CORS
+plugins: [
+  // Primer plugin (aceptador)
+ [
+    require.resolve('./plugins/scalar-billetera'),
+    {
+      id: 'scalar-billetera',
+      showNavLink: false,
+      name: '@scalar/docusaurus',
+      label: 'API para Billeteras',
+      route: '/dlcs/developers/portalApi/pct_for_wallets',
+      wrapperClassName: 'api-reference', // 👈 Agregá esta línea
+      hideDownloadButton: true, // 👈 oculta el botón "Download OpenAPI Document"
+      configuration: {
+        _integration: 'docusaurus',
+        spec: {
+          url: '/dlcs/APIsNoTransaccional.yaml',
         },
+        proxyUrl: 'https://proxy.scalar.com',
       },
-    ],
-  ], 
+    },
+  ],
+
+  // Plugin para aceptador
+  [
+    require.resolve('./plugins/scalar-aceptador'),
+    {
+      id: 'scalar-aceptador',
+      showNavLink: false,
+      name: '@scalar/docusaurus',
+      label: 'API para Aceptador',
+      route: '/dlcs/developers/portalApi/pct_for_acquirers',
+      wrapperClassName: 'api-reference', // 👈 Agregá esta línea
+      hideDownloadButton: true, // 👈 oculta el botón "Download OpenAPI Document"
+      configuration: {
+        _integration: 'docusaurus',
+        spec: {
+          url: '/dlcs/Administrator-for-Acceptors-APIs.yaml',
+        },
+        proxyUrl: 'https://proxy.scalar.com',
+      },
+    },
+  ],
+
+  // Plugin para Newpay
+  [
+    require.resolve('./plugins/scalar-paraNewpay'),
+    {
+      id: 'scalar-newpay',
+      showNavLink: false,
+      name: 'scalar-paraNewpay',
+      label: 'API para Newpay',
+      route: '/dlcs/developers/portalApi/pct_for_newpay',
+      wrapperClassName: 'api-reference', // 👈 Agregá esta línea
+      hideDownloadButton: true, // 👈 oculta el botón "Download OpenAPI Document"
+      configuration: {
+        _integration: 'docusaurus',
+        spec: {
+          url: '/dlcs/Acceptors-for-Administrators-APIs.yaml',
+        },
+        proxyUrl: 'https://proxy.scalar.com',
+      },
+    },
+  ],
+],
+scripts: [
+  '/js/scalar-fix.js'
+],
+
 };
 
 module.exports = config;

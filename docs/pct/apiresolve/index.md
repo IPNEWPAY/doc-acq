@@ -1,3 +1,6 @@
+---
+sidebar_position: 5
+---
 # API Resolve
 
 :::info
@@ -5,6 +8,22 @@ La construccion del API Resolve se basa en la, [CIMPRA 525](https://www.bcra.gob
 :::
 
 La API Resolve es un componente fundamental en el ecosistema de pagos con transferencia en Argentina, especialmente dentro del marco de Transferencias 3.0. Su función principal es proveer información adicional sobre una transacción de pago cuando esta no se encuentra completamente contenida en el código QR. Esta API se activa cuando un código QR dinámico indica que requiere información adicional para completar la transacción.
+
+```mermaid
+sequenceDiagram
+    participant Usuario
+    participant Billetera
+    participant APIResolve
+    participant Aceptador
+
+    Usuario->>Billetera: Escanea QR
+    Billetera->>Billetera: Detecta tag 99 = 01
+    Billetera->>APIResolve: GET /instant-payments/qr_id/{qr_id}
+    APIResolve->>Aceptador: Consulta datos del QR
+    Aceptador-->>APIResolve: Devuelve datos operativos
+    APIResolve-->>Billetera: Respuesta con datos del QR
+    Billetera->>Usuario: Muestra info del comercio
+```
 
 ## Indicador en el codigo QR
 El código QR incluye un subcampo (99) dentro del campo de "Merchant Account Information" que indica si se utiliza o no la API Resolve. Un valor de "01" en este subcampo indica que la API debe ser llamada. Si el valor es "00", la API no se debe usar.
