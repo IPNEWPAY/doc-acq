@@ -1,0 +1,418 @@
+# 08-06: Se agrega devoluciones
+# 18-06: Se agrega a este swagger la consulta de qr_id con array de transactions
+openapi: 3.0.1
+info:
+  title: APIs de Administrador para Aceptadores
+  version: v12-2021
+  description: |
+    [![](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/9136127-55d2bde1-a248-473f-95b5-64cfd02fb445?action=collection%2Ffork&collection-url=entityId%3D9136127-55d2bde1-a248-473f-95b5-64cfd02fb445%26entityType%3Dcollection%26workspaceId%3D78beee89-4238-4c5f-bd1f-7e98978744b4#?env%5BBolt%20Sandbox%20Environment%5D=W3sia2V5IjoiYXBpX2Jhc2VfdXJsIiwidmFsdWUiOiJodHRwczovL2FwaS1zYW5kYm94LmJvbHQuY29tIiwidHlwZSI6ImRlZmF1bHQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InRrX2Jhc2UiLCJ2YWx1ZSI6Imh0dHBzOi8vc2FuZGJveC5ib2x0dGsuY29tIiwidHlwZSI6ImRlZmF1bHQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFwaV9rZXkiLCJ2YWx1ZSI6IjxyZXBsYWNlIHdpdGggeW91ciBCb2x0IFNhbmRib3ggQVBJIGtleT4iLCJ0eXBlIjoic2VjcmV0IiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJwdWJsaXNoYWJsZV9rZXkiLCJ2YWx1ZSI6IjxyZXBsYWNlIHdpdGggeW91ciBCb2x0IFNhbmRib3ggcHVibGlzaGFibGUga2V5PiIsInR5cGUiOiJkZWZhdWx0IiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJkaXZpc2lvbl9pZCIsInZhbHVlIjoiPHJlcGxhY2Ugd2l0aCB5b3VyIEJvbHQgU2FuZGJveCBwdWJsaWMgZGl2aXNpb24gSUQ+IiwidHlwZSI6ImRlZmF1bHQiLCJlbmFibGVkIjp0cnVlfV0=)
+    
+    ## About
+    API construida por Administrador Newpay a ser consumida por Aceptadores que quieran integrarse a la solucion.
+     <p align="center">
+      <img src="http://localhost:3000/doc-acq/img/custom_properties.svg" alt="Logo" width="450" />
+    </p>
+security:
+  - BearerAuth: []
+servers:
+  - url: https://admin.url.oauth.com.ar
+paths:
+  /administrator/acquirers/v2/instant_payments/{qr_id}:
+    get:
+      tags:
+        - APIs de Administrador
+      summary: Estados del Pago.
+      security:
+        - BearerAuth: []
+      description: Esta API devuelve el estado y la información detallada de un QR_ID.
+      parameters:
+        - name: qr_id
+          in: path
+          description: Identificador único de QR para un pago.
+          required: true
+          schema:
+            type: string
+          example: "7f3ae4c2-e00f-4b85-8a08-94764b9f63ff"
+      responses:
+        200:
+          description: La solicitud ha sido exitosa.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/instant_payment_qrid_details_v2'
+        400:
+          description: Solicitud incorrecta.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errors'
+        401:
+          description: Apikey no válida o token vencido o no válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errors'
+        403:
+          description: Operación no autorizada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errors'
+        404:
+          description: Operación no encontrada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errors'
+        408:
+          description: Tiempo de espera agotado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errors'
+        500:
+          description: Error interno del servidor.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errors'
+  /administrator/acquirers/v1/refunds:
+    post:
+      summary: Devolucion de Pago QR.
+      security:
+        - BearerAuth: []
+      description: Esta API permite realizar devoluciones de pagos iniciados con QR.
+      tags:
+        - APIs de Administrador
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/instant_payment_refund_details'
+        required: true
+      responses:
+        200:
+          description: Devolución de pago instantáneo creada correctamente. Puede ser APROBADO o RECHAZADO.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/refunds_Response'
+        400:
+          description: Solicitud incorrecta. Envío de parámetros incorrectos en la solicitud.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errors'
+        401:
+          description: Apikey no válida o token vencido o no válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errors'
+        403:
+          description: Operación no autorizada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errors'
+        404:
+          description: Operación no encontrada.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errors'
+        408:
+          description: Tiempo de espera agotado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errors'
+        500:
+          description: Error interno del servidor.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errors'
+
+components:
+  schemas:
+    instant_payment_refund_details:
+      required:
+        - authorization_code
+        - qr_id
+      type: object
+      properties:
+        authorization_code:
+          type: string
+          description: Código de autorización del pago a ser devuelto.
+        qr_id:
+          type: string
+          description: Identificador único del QR del pago a ser devuelto.
+          example: "7f3ae4c2-e00f-4b85-8a08-94764b9f63ff"
+        refund_amount:
+          $ref: '#/components/schemas/amounts'
+        merchant:
+          $ref: '#/components/schemas/merchants_refund'
+    refunds_Response:
+      type: object
+      required:
+        - original_transaction
+        - transaction
+      properties:
+        original_transaction:
+          type: object
+          required:
+            - qr_id
+            - authorization_code
+            - amount
+            - balance
+          properties:
+            qr_id:
+              type: string
+              description: Identificador único de una intención de pago con lectura de QR.
+            authorization_code:
+              type: string
+              description: Identificador de la operación original a devolver.
+            amount:
+              $ref: '#/components/schemas/amounts'
+            balance:
+              description: Saldo disponible de la transacción original de pago.
+              $ref: '#/components/schemas/amounts'
+            merchant:
+              $ref: '#/components/schemas/public_merchants'
+            payer:
+              $ref: '#/components/schemas/public_payers'
+        transaction:
+          allOf:
+            - $ref: '#/components/schemas/transaction_details'
+          properties:
+            refund_gross_amount:
+              $ref: '#/components/schemas/amounts'
+            refund_net_amount:
+              $ref: '#/components/schemas/amounts'
+    instant_payment_qrid_details_v1:
+      description: Representación de un Pago Instantáneo hacia el aceptador.
+      required:
+        - qr_id
+        - amount
+        - merchant
+        - payer
+      type: object
+      properties:
+        qr_id:
+          type: string
+          description: Identificador único de QR para un pago.
+          example: "7f3ae4c2-e00f-4b85-8a08-94764b9f63ff"
+        amount:
+          $ref: '#/components/schemas/amounts'
+        merchant:
+          $ref: '#/components/schemas/public_merchants'
+        payer:
+          $ref: '#/components/schemas/public_payers'
+        transaction:
+          allOf:
+            - $ref: '#/components/schemas/transaction_details'
+          properties:
+            gross_amount:
+              $ref: '#/components/schemas/amounts'
+            net_amount:
+              $ref: '#/components/schemas/amounts'
+            balance:
+              $ref: '#/components/schemas/amounts'
+    instant_payment_qrid_details_v2:
+      description: Representación de un Pago Instantáneo hacia el aceptador.
+      required:
+        - qr_id
+        - amount
+        - merchant
+        - payer
+      type: object
+      properties:
+        qr_id:
+          type: string
+          description: Identificador único de QR para un pago.
+          example: "7f3ae4c2-e00f-4b85-8a08-94764b9f63ff"
+        amount:
+          $ref: '#/components/schemas/amounts'
+        balance:
+          $ref: '#/components/schemas/amounts'
+        merchant:
+          $ref: '#/components/schemas/public_merchants'
+        payer:
+          $ref: '#/components/schemas/public_payers'
+        transactions:
+          type: array
+          items:
+            allOf:
+              - $ref: '#/components/schemas/transaction_details'
+            properties:
+              gross_amount:
+                $ref: '#/components/schemas/amounts'
+              net_amount:
+                $ref: '#/components/schemas/amounts'
+    merchants_refund:
+      required:
+        - account
+      type: object
+      properties:
+        account:
+          $ref: '#/components/schemas/accounts'
+      description: Datos del comercio.
+    public_merchants:
+      required:
+        - cuit
+        - soft_descriptor
+      type: object
+      properties:
+        soft_descriptor:
+          type: string
+          description: Nombre del comercio.
+        cuit:
+          $ref: '#/components/schemas/cuit'
+      description: Datos del comercio.
+    amounts:
+      required:
+        - currency
+        - value
+      type: object
+      properties:
+        value:
+          type: number
+          description: Monto.
+          format: currency
+          example: 100.25
+        currency:
+          type: string
+          description: Moneda del pago o devolución.
+          enum:
+            - ARS
+            - USD
+    accounts:
+      required:
+        - cbu
+      type: object
+      properties:
+        cbu:
+          type: string
+          description: CBU destino de los fondos.
+        cvu:
+          type: string
+          description: CVU destino de los fondos.
+      description: Datos de transferencia.
+    documents:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Tipo de documento.
+          enum:
+            - DNI
+            - LC
+            - LE
+            - CDI
+            - CUIT
+        number:
+          type: string
+          description: Número de documento.
+          example: "3312345659"
+    public_payers:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Nombre completo del pagador.
+          example: Juan Perez
+        document:
+          $ref: '#/components/schemas/documents'
+        wallet:
+          required:
+            - cuit
+            - name
+          type: object
+          properties:
+            name:
+              type: string
+              description: Nombre de la billetera.
+              example: MODO
+            cuit:
+              $ref: '#/components/schemas/cuit'
+    transaction_details:
+      required:
+        - authorization_code
+        - code
+        - datetime
+        - description
+        - type
+      type: object
+      properties:
+        authorization_code:
+          type: string
+          description: Identificador de la operación.
+        code:
+          $ref: '#/components/schemas/response_status'
+        description:
+          type: string
+          description: Descripción del estado de la transacción.
+        on_rejection:
+          required:
+            - code
+            - description
+          type: object
+          properties:
+            code:
+              type: string
+              description: Código de rechazo de la transacción.
+            description:
+              type: string
+              description: Descripción del motivo de rechazo de la transacción.
+          description: Detalle del motivo de rechazo.
+        datetime:
+          type: string
+          description: Fecha y hora de la transacción.
+          format: date-time
+        type:
+          type: string
+          description: Concepto de la Transacción (CCT, PCT, DCT, ECT).
+          enum:
+            - CCT
+            - PCT
+            - DCT
+            - ECT
+    cuit:
+      maxLength: 11
+      minLength: 11
+      type: string
+      description: CUIT de la entidad (sin guiones).
+      example: 22333333339
+    errors:
+      required:
+        - errors
+      type: object
+      properties:
+        errors:
+          minItems: 1
+          type: array
+          description: Lista de errores.
+          items:
+            required:
+              - description
+            type: object
+            properties:
+              code:
+                type: string
+                description: Código unívoco del error.
+              description:
+                type: string
+                description: Descripción detallada del error.
+      description: Array con errores.
+    response_status:
+      type: string
+      description: Código de estado de la transacción.
+      enum:
+        - APPROVED
+        - REJECTED
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: "Esta API soporta el flujo client_credentials. Puede obtener un token emitiendo un POST a 'https://admin_url_oauth/oauth2/token?grant_type=client_credentials' --header 'Authorization: Basic <token>'."

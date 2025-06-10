@@ -1,0 +1,1 @@
+(self.webpackChunk=self.webpackChunk||[]).push([[6434],{89391:(e,s,a)=>{"use strict";a.r(s),a.d(s,{default:()=>n});a(96540);var c=a(28794),l=a(74848);const n=()=>(0,l.jsx)(c.RedocStandalone,{specUrl:"/swagger.yaml"})},67992:()=>{},3986:()=>{},49936:()=>{},2941:()=>{},28825:()=>{},7411:()=>{},92441:()=>{}}]);

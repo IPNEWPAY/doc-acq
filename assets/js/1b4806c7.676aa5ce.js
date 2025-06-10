@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[7354],{41589:a=>{a.exports=JSON.parse('{"name":"@scalar/docusaurus","id":"scalar-aceptador"}')}}]);
