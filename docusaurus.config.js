@@ -7,20 +7,18 @@ import { themes as prismThemes } from 'prism-react-renderer';
 const config = {
   title: 'Newpay Docs',
   tagline: 'Onboarding PCT y PULL',
-  url: 'https://leonardoespindola.github.io',
-  baseUrl: '/dlcs/',
+  url: 'https://ipnewpay.github.io/',
+  baseUrl: '/doc-acq/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/icon.ico',
+  organizationName: 'IPNEWPAY',      // tu usuario o organización en GitHub
+  projectName: 'doc-acq',            // el nombre del repo
+  deploymentBranch: 'gh-pages',      // rama que usará para deploy
   markdown: {
   mermaid: true,
 },
 themes: ['@docusaurus/theme-mermaid'],
-
-  // GitHub pages deployment config.
-  organizationName: 'leonardoespindola', // Your GitHub org/user name.
-  projectName: 'ipnewpay', // Your repo name.
-
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -71,14 +69,34 @@ themes: ['@docusaurus/theme-mermaid'],
       },
     },
     navbar: {
-    title: 'Docs Aceptador',
+    title: 'Docs Newpay',
     logo: {
     alt: 'Logo',
     src: 'img/icon.ico', // ✅ Ruta desde static
   },
       items: [
-    { href: '/dlcs/developers/portalApi/pct_for_acquirers', label: 'API de Aceptador', position: 'left' },
-    { href: '/dlcs/developers/portalApi/pct_for_newpay', label: 'API de Newpay', position: 'left' }
+    { label: 'Onboarding', to: '/onboarding', position: 'left' },
+    {
+  label: 'API Playground',
+  position: 'left',
+  items: [
+    {
+      label: 'Billetera',
+      to: '/playground/billetera', // o href si es externo
+      activeBasePath: 'playground/billetera',
+    },
+    {
+      label: 'Aceptador',
+      to: 'developers/portalApi/',
+      activeBasePath: 'playground/aceptador',
+    },
+    {
+      label: 'Emisor',
+      to: '/playground/emisor',
+      activeBasePath: 'playground/emisor',
+    },
+  ],
+}
     ,
   ],
     },
@@ -126,13 +144,13 @@ plugins: [
       showNavLink: false,
       name: '@scalar/docusaurus',
       label: 'API para Billeteras',
-      route: '/dlcs/developers/portalApi/pct_for_wallets',
+      route: '/doc-acq/developers/portalApi/pct_for_wallets',
       wrapperClassName: 'api-reference', // 👈 Agregá esta línea
       hideDownloadButton: true, // 👈 oculta el botón "Download OpenAPI Document"
       configuration: {
         _integration: 'docusaurus',
         spec: {
-          url: '/dlcs/APIsNoTransaccional.yaml',
+          url: '/doc-acq/APIsNoTransaccional.yaml',
         },
         proxyUrl: 'https://proxy.scalar.com',
       },
@@ -147,13 +165,13 @@ plugins: [
       showNavLink: false,
       name: '@scalar/docusaurus',
       label: 'API para Aceptador',
-      route: '/dlcs/developers/portalApi/pct_for_acquirers',
+      route: '/doc-acq/developers/portalApi/pct_for_acquirers',
       wrapperClassName: 'api-reference', // 👈 Agregá esta línea
       hideDownloadButton: true, // 👈 oculta el botón "Download OpenAPI Document"
       configuration: {
         _integration: 'docusaurus',
         spec: {
-          url: '/dlcs/Administrator-for-Acceptors-APIs.yaml',
+          url: '/doc-acq/Administrator-for-Acceptors-APIs.yaml',
         },
         proxyUrl: 'https://proxy.scalar.com',
       },
@@ -168,13 +186,13 @@ plugins: [
       showNavLink: false,
       name: 'scalar-paraNewpay',
       label: 'API para Newpay',
-      route: '/dlcs/developers/portalApi/pct_for_newpay',
+      route: '/doc-acq/developers/portalApi/pct_for_newpay',
       wrapperClassName: 'api-reference', // 👈 Agregá esta línea
       hideDownloadButton: true, // 👈 oculta el botón "Download OpenAPI Document"
       configuration: {
         _integration: 'docusaurus',
         spec: {
-          url: '/dlcs/Acceptors-for-Administrators-APIs.yaml',
+          url: '/doc-acq/Acceptors-for-Administrators-APIs.yaml',
         },
         proxyUrl: 'https://proxy.scalar.com',
       },

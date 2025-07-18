@@ -4,7 +4,7 @@ sidebar_position: 8
 # Consulta de Estado de la Transacción
 
 :::info
-No olvides que puedes ejecutar nuestra [API Playground](/dlcs/developers/portalApi/pct_for_acquirers) 
+No olvides que puedes ejecutar nuestra [API Playground](/doc-acq/developers/portalApi/pct_for_acquirers) 
 :::
 La consulta de estado es una API que el aceptador puede invocar hacia el administrador para conocer el resultado de una transacción iniciada por una billetera. Este mecanismo actúa como respaldo en caso de que el webhook de notificación no llegue o falle
 ```mermaid

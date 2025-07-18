@@ -21,6 +21,8 @@
     "@docusaurus/preset-classic": "^3.7.0",
     "@docusaurus/theme-common": "^3.7.0",
     "@docusaurus/theme-mermaid": "^3.7.0",
+    "@fontsource/balsamiq-sans": "^4.5.9",
+    "@fontsource/cascadia-code": "^4.2.1",
     "@mdx-js/react": "^3.0.0",
     "@scalar/docusaurus": "^0.4.211",
     "clsx": "^1.2.1",

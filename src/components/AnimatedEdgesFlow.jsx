@@ -1,121 +1,126 @@
-import React from 'react';
-import { ReactFlow, Background, useNodesState, useEdgesState } from 'reactflow';
+import React, { useEffect, useState } from 'react';
+import {
+  ReactFlow,
+  Background,
+  useNodesState,
+  useEdgesState
+} from 'reactflow';
 import AnimatedSVGEdge from './AnimatedSVGEdge';
 import 'reactflow/dist/style.css';
 
 const initialNodes = [
-  { id: '1', position: { x: -100, y: -200 }, data: { label: 'Billetera' } },
-  { id: '2', position: { x: -100, y: 0 }, data: { label: 'Administrador' } },
-  { id: '3', position: { x: 100, y: 0 }, data: { label: 'Aceptador' } },
-  { id: '4', position: { x: -100, y: 200 }, data: { label: 'Procesador' } },
-  { id: '5', position: { x: -300, y: 400 }, data: { label: 'Banco Emisor (Usuario)' } },
-  { id: '6', position: { x: -100, y: 400 }, data: { label: 'Banco Cta Puente' } },
-  { id: '7', position: { x: 100, y: 400 }, data: { label: 'Banco Comercio' } },
-  { id: '8', position: { x: 200, y: -200 }, data: { label: 'QR Comercio' }, targetPosition: 'left' },
+  { id: '1', position: { x: -100, y: -200 }, data: { label: 'Billetera' }, sourcePosition: 'bottom', targetPosition: 'top' },
+  { id: '2', position: { x: -100, y: -110 }, data: { label: 'Administrador' }, sourcePosition: 'bottom', targetPosition: 'top' },
+  { id: '3', position: { x: 100, y: -20 }, data: { label: 'Aceptador' }, sourcePosition: 'bottom', targetPosition: 'top' },
+  { id: '4', position: { x: -100, y: -20 }, data: { label: 'Procesador' }, sourcePosition: 'bottom', targetPosition: 'top' },
+  { id: '5', position: { x: -300, y: 100 }, data: { label: 'Banco Emisor (Usuario)' }, sourcePosition: 'bottom', targetPosition: 'top' },
+  { id: '6', position: { x: -100, y: 100 }, data: { label: 'Banco Cta Puente' }, sourcePosition: 'bottom', targetPosition: 'top' },
+  { id: '7', position: { x: 100, y: 100 }, data: { label: 'Banco Comercio' }, sourcePosition: 'bottom', targetPosition: 'top' },
+  { id: '8', position: { x: 200, y: -200 }, data: { label: 'QR Comercio' }, sourcePosition: 'bottom', targetPosition: 'left' },
 ];
 
 const initialEdges = [
-    {
-      id: 'edge1', // Billetera a Administrador
-      type: 'animatedSvg',
-      source: '1',
-      target: '2',
-      data: {
-        delayAtoB: '0s', // Inicio de A -> B
-        delayBtoA: '33s', // Inicio de B -> A
-        colorAtoB: '#ff0073', // Color de A -> B
-        colorBtoA: '#0073ff', // Color de B -> A
-      },
+  {
+    id: 'edge1',
+    type: 'animatedSvg',
+    source: '1',
+    target: '2',
+    data: {
+      delayAtoB: '0s',
+      delayBtoA: '33s',
+      colorAtoB: '#ff0073',
+      colorBtoA: '#0073ff',
     },
-    {
-        id: 'edge2', // Administrador a Aceptador
-        type: 'animatedSvg',
-        source: '2',
-        target: '3',
-        data: {
-          delayAtoB: '3s', // Inicio de A -> B
-          delayBtoA: '6s', // Inicio de B -> A
-          colorAtoB: '#ff0073', // Color de A -> B
-          colorBtoA: '#0073ff', // Color de B -> A
-        },
-      },
-      {
-        id: 'edge3', // Administrador a Procesador
-        type: 'animatedSvg',
-        source: '2',
-        target: '4',
-        data: {
-          delayAtoB: '9s', // Inicio de A -> B
-          delayBtoA: '30s', // Inicio de B -> A
-          colorAtoB: '#ff0073', // Color de A -> B
-          colorBtoA: '#0073ff', // Color de B -> A
-        },
-      },
-      {
-        id: 'edge4', //Procesador a Bcro Emisor
-        type: 'animatedSvg',
-        source: '4',
-        target: '5',
-        data: {
-          delayAtoB: '12s', // Inicio de A -> B
-          delayBtoA: '15s', // Inicio de B -> A
-          colorAtoB: '#ff0073', // Color de A -> B
-          colorBtoA: '#0073ff', // Color de B -> A
-        },
-      },
-      {
-        id: 'edge5', //Procesador a Bco cta Puente
-        type: 'animatedSvg',
-        source: '4',
-        target: '6',
-        data: {
-          delayAtoB: '18s', // Inicio de A -> B
-          delayBtoA: '21s', // Inicio de B -> A
-          colorAtoB: '#ff0073', // Color de A -> B
-          colorBtoA: '#0073ff', // Color de B -> A
-        },
-      },
-      {
-        id: 'edge6', //Procesador a Bco Comercio
-        type: 'animatedSvg',
-        source: '4',
-        target: '7',
-        data: {
-          delayAtoB: '24s', // Inicio de A -> B
-          delayBtoA: '27s', // Inicio de B -> A
-          colorAtoB: '#ff0073', // Color de A -> B
-          colorBtoA: '#0073ff', // Color de B -> A
-        },
-      },
-      {
-        id: 'edge7', //Procesador a Bco Comercio
-        type: 'animatedSvg',
-        source: '2',
-        target: '3',
-        data: {
-          delayAtoB: '33s', // Inicio de A -> B
-          delayBtoA: '36s', // Inicio de B -> A
-          colorAtoB: '#ff0073', // Color de A -> B
-          colorBtoA: '#0073ff', // Color de B -> A
-        },
-      },
-      {
-        id: 'edge0', //Billetera a QR Comercio
-        animated: true,
-        type: 'smoothstep',
-        label: 'LECTURA DE QR',
-        source: '1',
-        target: '8',
-      },
-      {
-        id: 'edge0B', //Billetera a Aceptador
-        animated: true,
-        type: 'smoothstep',
-        label: 'API RESOLVE',
-        source: '1',
-        target: '3',
-      },
-  ];
+  },
+  {
+    id: 'edge2',
+    type: 'animatedSvg',
+    source: '2',
+    target: '3',
+    data: {
+      delayAtoB: '3s',
+      delayBtoA: '6s',
+      colorAtoB: '#ff0073',
+      colorBtoA: '#0073ff',
+    },
+  },
+  {
+    id: 'edge3',
+    type: 'animatedSvg',
+    source: '2',
+    target: '4',
+    data: {
+      delayAtoB: '9s',
+      delayBtoA: '30s',
+      colorAtoB: '#ff0073',
+      colorBtoA: '#0073ff',
+    },
+  },
+  {
+    id: 'edge4',
+    type: 'animatedSvg',
+    source: '4',
+    target: '5',
+    data: {
+      delayAtoB: '12s',
+      delayBtoA: '15s',
+      colorAtoB: '#ff0073',
+      colorBtoA: '#0073ff',
+    },
+  },
+  {
+    id: 'edge5',
+    type: 'animatedSvg',
+    source: '4',
+    target: '6',
+    data: {
+      delayAtoB: '18s',
+      delayBtoA: '21s',
+      colorAtoB: '#ff0073',
+      colorBtoA: '#0073ff',
+    },
+  },
+  {
+    id: 'edge6',
+    type: 'animatedSvg',
+    source: '4',
+    target: '7',
+    data: {
+      delayAtoB: '24s',
+      delayBtoA: '27s',
+      colorAtoB: '#ff0073',
+      colorBtoA: '#0073ff',
+    },
+  },
+  {
+    id: 'edge7',
+    type: 'animatedSvg',
+    source: '2',
+    target: '3',
+    data: {
+      delayAtoB: '33s',
+      delayBtoA: '36s',
+      colorAtoB: '#ff0073',
+      colorBtoA: '#0073ff',
+    },
+  },
+  {
+    id: 'edge0',
+    animated: true,
+    type: 'smoothstep',
+    label: 'LECTURA DE QR',
+    source: '1',
+    target: '8',
+  },
+  {
+    id: 'edge0B',
+    animated: true,
+    type: 'smoothstep',
+    label: 'API RESOLVE',
+    source: '1',
+    target: '3',
+  },
+];
 
 const edgeTypes = {
   animatedSvg: AnimatedSVGEdge,
@@ -124,19 +129,44 @@ const edgeTypes = {
 const AnimatedEdgesFlow = () => {
   const [nodes, , onNodesChange] = useNodesState(initialNodes);
   const [edges, , onEdgesChange] = useEdgesState(initialEdges);
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    const match = window.matchMedia('(prefers-color-scheme: dark)');
+    setTheme(match.matches ? 'dark' : 'light');
+
+    const handleThemeChange = (e) => setTheme(e.matches ? 'dark' : 'light');
+    match.addEventListener('change', handleThemeChange);
+
+    return () => match.removeEventListener('change', handleThemeChange);
+  }, []);
+
+  const backgroundColor = theme === 'dark' ? '#1a1a1a' : '#F7F9FB';
+  const nodeTextColor = theme === 'dark' ? '#ffffff' : '#000000';
+  const nodeBackground = theme === 'dark' ? '#333' : '#fff';
+
+  const styledNodes = nodes.map((node) => ({
+    ...node,
+    style: {
+      ...node.style,
+      color: nodeTextColor,
+      background: nodeBackground,
+      border: '1px solid #ccc',
+    },
+  }));
 
   return (
-    <div style={{ width: '100%', height: '500px' }}> {/* Contenedor */}
+    <div style={{ width: '100%', height: '500px', backgroundColor }}>
       <ReactFlow
-        nodes={nodes}
+        nodes={styledNodes}
         edges={edges}
         edgeTypes={edgeTypes}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         fitView
-        style={{ backgroundColor: "#F7F9FB" }}
+        style={{ backgroundColor }}
       >
-        <Background />
+        <Background color={theme === 'dark' ? '#444' : '#aaa'} />
       </ReactFlow>
     </div>
   );

@@ -1,4 +1,4 @@
 position: 5
-collapsible: false
+collapsible: true
 collapsed: true
-label: Pagos con Transferencias (PCT)
+label: Introduccion a PCT

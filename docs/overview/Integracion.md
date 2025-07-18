@@ -2,6 +2,9 @@
 sidebar_position: 5
 ---
 # Integracion
+:::caution
+Esta fase es crítica para garantizar que el aceptador pueda operar de forma segura, interoperable y conforme a los estándares regulatorios y técnicos del sistema.
+:::
 
 La etapa de integración representa el momento en que el aceptador se conecta efectivamente con las billeteras del ecosistema de Transferencias 3.0, validando la interoperabilidad de extremo a extremo en condiciones reales de operación.
 
@@ -24,6 +27,3 @@ La etapa de integración representa el momento en que el aceptador se conecta ef
 - Se emite el certificado de interoperabilidad correspondiente.
 - Se notifica al BCRA, si corresponde, sobre la incorporación del nuevo aceptador.
 
-:::caution
-Esta fase es crítica para garantizar que el aceptador pueda operar de forma segura, interoperable y conforme a los estándares regulatorios y técnicos del sistema.
-:::

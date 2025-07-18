@@ -1,5 +1,5 @@
 ---
-slug: /
+slug: /integration-path
 sidebar_position: 1
 ---
 

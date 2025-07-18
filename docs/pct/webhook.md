@@ -4,7 +4,7 @@ sidebar_position: 7
 # Notificación al Aceptador (Webhook)
 
 :::info
-No olvides que puedes ejecutar nuestra [API Playground](/dlcs/developers/portalApi/pct_for_newpay) 
+No olvides que puedes ejecutar nuestra [API Playground](/doc-acq/developers/portalApi/pct_for_newpay) 
 :::
 Una vez que el administrador procesa una transacción PCT, se emite una notificación al aceptador mediante un webhook. Esta notificación permite al aceptador registrar el resultado de la operación y continuar con su lógica de negocio (por ejemplo, liberar un producto, emitir un ticket, etc.).
 ```mermaid

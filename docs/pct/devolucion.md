@@ -4,7 +4,7 @@ sidebar_position: 9
 # Devolución (DCT)
 
 :::info
-No olvides que puedes ejecutar nuestra [API Playground](/dlcs/developers/portalApi/pct_for_acquirers) 
+No olvides que puedes ejecutar nuestra [API Playground](/doc-acq/developers/portalApi/pct_for_acquirers) 
 :::
 El servicio de devolución permite al aceptador revertir una operación de pago con transferencia (PCT) previamente aprobada. Esta devolución se realiza mediante una nueva transferencia, denominada DCT, que devuelve el importe al pagador original.
 ```mermaid

@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Consulta de Datos Adicionales al Aceptador
 :::info
-No olvides que puedes ejecutar nuestra [API Playground](/dlcs/developers/portalApi/pct_for_acquirers) 
+No olvides que puedes ejecutar nuestra [API Playground](/doc-acq/developers/portalApi/pct_for_acquirers) 
 :::
 La consulta de datos adicionales es una API que el administrador invoca hacia el aceptador para obtener información complementaria sobre una transacción iniciada por una billetera. Esta información **no se muestra al usuario**, sino que se utiliza para aplicar controles internos que determinan correctamente qué se le debe acreditar al comercio.
 ```mermaid
