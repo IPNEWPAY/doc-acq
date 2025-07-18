@@ -24,7 +24,7 @@ Cuando el usuario escanea un código QR con su billetera, se inicia el flujo de 
 
 - CVU o alias del comercio
 - Monto (opcional)
-- Monedas
+- Monedass
 - ID de transacción
 - Datos del adquirente
 - Flags de modalidad (PCT, tarjeta)
