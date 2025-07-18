@@ -156,7 +156,7 @@ const AnimatedEdgesFlow = () => {
   }));
 
   return (
-    <div style={{ width: '100%', height: '500px', backgroundColor }}>
+    <div style={{  transform: 'scale(0.80)', transformOrigin: 'top center', width: '100%', height: '500px', backgroundColor }}>
       <ReactFlow
         nodes={styledNodes}
         edges={edges}
