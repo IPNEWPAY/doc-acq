@@ -11,7 +11,7 @@ import 'reactflow/dist/style.css';
 const initialNodes = [
   { id: '1', position: { x: -100, y: -200 }, data: { label: 'Billetera' }, sourcePosition: 'bottom', targetPosition: 'top' },
   { id: '2', position: { x: -100, y: -110 }, data: { label: 'Administrador' }, sourcePosition: 'bottom', targetPosition: 'top' },
-  { id: '3', position: { x: 100, y: -20 }, data: { label: 'Aceptador' }, sourcePosition: 'bottom', targetPosition: 'top' },
+  { id: '3', position: { x: 200, y: -80 }, data: { label: 'Aceptador' }, sourcePosition: 'bottom', targetPosition: 'top' },
   { id: '4', position: { x: -100, y: -20 }, data: { label: 'Procesador' }, sourcePosition: 'bottom', targetPosition: 'top' },
   { id: '5', position: { x: -300, y: 100 }, data: { label: 'Banco Emisor (Usuario)' }, sourcePosition: 'bottom', targetPosition: 'top' },
   { id: '6', position: { x: -100, y: 100 }, data: { label: 'Banco Cta Puente' }, sourcePosition: 'bottom', targetPosition: 'top' },
@@ -141,7 +141,7 @@ const AnimatedEdgesFlow = () => {
     return () => match.removeEventListener('change', handleThemeChange);
   }, []);
 
-  const backgroundColor = theme === 'dark' ? '#1a1a1a' : '#F7F9FB';
+  const backgroundColor = theme === 'dark' ? '#1a1a1a' : '#0E0E0E';
   const nodeTextColor = theme === 'dark' ? '#ffffff' : '#000000';
   const nodeBackground = theme === 'dark' ? '#333' : '#fff';
 
@@ -166,7 +166,6 @@ const AnimatedEdgesFlow = () => {
         fitView
         style={{ backgroundColor }}
       >
-        <Background color={theme === 'dark' ? '#444' : '#aaa'} />
       </ReactFlow>
     </div>
   );
